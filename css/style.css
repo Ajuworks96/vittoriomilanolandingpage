@@ -1,0 +1,1993 @@
+/* ==========================================================================
+   VITTORIO MILANO — THE ARTISTRY OF BESPOKE
+   Core Stylesheet & Design System
+   Architected for 100% WordPress / Elementor Compatibility
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   01. DESIGN TOKENS & CSS VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette — Deep Royal Burgundy #600C03, Warm Ivory, Muted Gold */
+  --color-burgundy-dark: #380601;
+  --color-burgundy: #600C03;
+  --color-burgundy-medium: #4D0902;
+  --color-burgundy-light: #7D1206;
+
+  /* Luxury Gradient Tokens featuring #600C03 */
+  --gradient-burgundy: linear-gradient(135deg, #600C03 0%, #350501 100%);
+  --gradient-burgundy-dark: linear-gradient(145deg, #3D0601 0%, #1A0200 100%);
+  --gradient-burgundy-radial: radial-gradient(ellipse at 50% 20%, #781004 0%, #600C03 45%, #220300 100%);
+  --gradient-burgundy-card: linear-gradient(145deg, rgba(96, 12, 3, 0.75) 0%, rgba(35, 5, 1, 0.92) 100%);
+  --gradient-burgundy-card-hover: linear-gradient(145deg, rgba(122, 18, 5, 0.9) 0%, rgba(60, 7, 2, 0.98) 100%);
+  --gradient-burgundy-btn: linear-gradient(135deg, #600C03 0%, #3D0601 100%);
+  --gradient-burgundy-btn-hover: linear-gradient(135deg, #7D1206 0%, #600C03 100%);
+
+  --color-ivory-light: #FAF8F1;
+  --color-ivory: #F4EEDC;
+  --color-ivory-muted: #EAE2CF;
+  --color-ivory-border: #E2D9C3;
+
+  --color-gold: #C9A45C;
+  --color-gold-light: #DFBF7A;
+  --color-gold-dark: #A5813A;
+  --color-gold-subtle: rgba(201, 164, 92, 0.15);
+  --color-gold-border: rgba(201, 164, 92, 0.3);
+
+  --color-text-dark: #281A18;
+  --color-text-muted: #756C62;
+  --color-text-light: #FAF8F1;
+  --color-text-ivory-subtle: #C4BBB0;
+
+  --color-border-dark: rgba(201, 164, 92, 0.2);
+  --color-border-light: rgba(80, 50, 30, 0.12);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing System */
+  --container-max: 1320px;
+  --container-padding: 2rem;
+  --section-padding: 120px 0;
+  --section-padding-sm: 80px 0;
+
+  /* Transitions */
+  --transition-fast: 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-smooth: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows & Radius */
+  --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 15px 35px rgba(33, 7, 8, 0.08);
+  --shadow-dark: 0 20px 40px rgba(0, 0, 0, 0.4);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   02. BASE RESETS & TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+  background-color: var(--color-ivory-light);
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-burgundy-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+/* Typography Scale — All Headings Italic Weight 300 */
+h1, h2, h3, h4, h5, h6,
+.hero-title, .section-title, .philosophy-headline,
+.story-title, .craft-title, .step-card-title,
+.product-title, .tier-name, .why-title,
+.pillar-title, .contact-title, .signature-name,
+.stat-number, .tier-roman-num, .craft-row-num, .pillar-num, .step-card-num {
+  font-family: var(--font-serif);
+  font-weight: 300 !important;
+  font-style: italic !important;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 3.8vw, 3.25rem); }
+h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+h4 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); }
+
+em, .italic-accent {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-weight: 300 !important;
+}
+
+.text-gold {
+  color: var(--color-gold) !important;
+}
+
+/* --------------------------------------------------------------------------
+   03. REUSABLE ELEMENTOR-FRIENDLY UTILITIES
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.bg-burgundy {
+  background: var(--gradient-burgundy);
+  color: var(--color-ivory-light);
+}
+
+.bg-burgundy-dark {
+  background: var(--gradient-burgundy-dark);
+  color: var(--color-ivory-light);
+}
+
+.bg-ivory {
+  background-color: var(--color-ivory);
+  color: var(--color-text-dark);
+}
+
+.bg-ivory-light {
+  background-color: var(--color-ivory-light);
+  color: var(--color-text-dark);
+}
+
+/* Section Header Structure */
+.section-header {
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+.section-header.text-center {
+  text-align: center;
+}
+
+.section-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.section-title {
+  margin-bottom: 1.25rem;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  line-height: 1.7;
+}
+
+.section-header.text-center .section-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bg-burgundy .section-description {
+  color: var(--color-text-ivory-subtle);
+}
+
+/* Luxury Divider Lines */
+.gold-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: 1.5rem 0;
+}
+
+.gold-divider.center {
+  margin: 1.5rem auto;
+}
+
+.gold-crest-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 1rem;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   04. BUTTON WIDGETS (ELEMENTOR BUTTON COMPATIBILITY)
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.1rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: var(--color-burgundy-dark);
+  border-color: var(--color-gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201, 164, 92, 0.3);
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--color-gold);
+  border-color: var(--color-gold-border);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--color-gold);
+  color: var(--color-burgundy-dark);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.btn-burgundy {
+  background: var(--gradient-burgundy-btn);
+  color: var(--color-ivory-light);
+  border-color: var(--color-gold-border);
+}
+
+.btn-burgundy:hover {
+  background: var(--gradient-burgundy-btn-hover);
+  border-color: var(--color-gold);
+  color: var(--color-ivory-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(96, 12, 3, 0.4);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-text-dark);
+  border-color: var(--color-border-light);
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-dark);
+  transform: translateY(-2px);
+}
+
+.btn-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   05. HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  padding: 1rem 0;
+  background-color: rgba(56, 6, 1, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-gold-subtle);
+  box-shadow: var(--shadow-dark);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+}
+
+.official-brand-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(201, 164, 92, 0.25));
+  transition: transform var(--transition-fast);
+}
+
+.official-brand-logo:hover {
+  transform: scale(1.03);
+}
+
+.hero-official-logo {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(201, 164, 92, 0.3));
+}
+
+.footer-official-logo {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation Links */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-ivory);
+  position: relative;
+  padding: 0.35rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--color-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.phone-link {
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.phone-link:hover {
+  color: var(--color-ivory);
+}
+
+/* Mobile Navigation Toggle */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 1010;
+}
+
+.hamburger-line {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-gold);
+  position: absolute;
+  left: 0;
+  transition: var(--transition-fast);
+}
+
+.hamburger-line:nth-child(1) { top: 3px; }
+.hamburger-line:nth-child(2) { top: 11px; width: 75%; }
+.hamburger-line:nth-child(3) { top: 19px; }
+
+.mobile-nav-toggle.active .hamburger-line:nth-child(1) {
+  top: 11px;
+  transform: rotate(45deg);
+}
+
+.mobile-nav-toggle.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav-toggle.active .hamburger-line:nth-child(3) {
+  top: 11px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  background: var(--gradient-burgundy-dark);
+  padding: 6rem 3rem 3rem;
+  z-index: 1005;
+  transition: right var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid var(--color-gold-border);
+}
+
+.mobile-nav-drawer.active {
+  right: 0;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.mobile-menu-link {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  color: var(--color-ivory);
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.mobile-menu-link:hover {
+  color: var(--color-gold);
+  padding-left: 0.5rem;
+}
+
+.mobile-drawer-footer {
+  border-top: 1px solid var(--color-gold-subtle);
+  padding-top: 2rem;
+  color: var(--color-text-ivory-subtle);
+  font-size: 0.8rem;
+}
+
+/* --------------------------------------------------------------------------
+   06. SECTION 01 — HERO (ASYMMETRIC EDITORIAL SPLIT)
+   -------------------------------------------------------------------------- */
+.section-hero {
+  min-height: 100vh;
+  padding: 140px 0 90px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: var(--gradient-burgundy-radial);
+  color: var(--color-ivory-light);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-gold-subtle);
+}
+
+.section-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 140%;
+  background: radial-gradient(circle at center, rgba(201, 164, 92, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-crest-mini {
+  width: 32px;
+  height: 32px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 4.8vw, 4.65rem);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--color-ivory-light);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-title em {
+  color: var(--color-gold-light);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--color-text-ivory-subtle);
+  max-width: 620px;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* Embedded Hero Metrics Strip */
+.hero-metrics-strip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gold-subtle);
+  width: 100%;
+}
+
+.hero-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-val {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.metric-lab {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-ivory-muted);
+  margin-top: 0.35rem;
+}
+
+.hero-metric-divider {
+  width: 1px;
+  height: 35px;
+  background-color: var(--color-gold-subtle);
+}
+
+/* Right Column Portrait Frame */
+.hero-image-col {
+  position: relative;
+}
+
+.hero-portrait-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 125%; /* Aspect ratio */
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gold-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-dark);
+}
+
+.hero-portrait-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--transition-slow);
+}
+
+.hero-portrait-frame:hover .hero-portrait-img {
+  transform: scale(1.05);
+}
+
+.hero-seal-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(20, 4, 5, 0.9);
+  border: 1px solid var(--color-gold);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.seal-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.seal-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.seal-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.seal-sub {
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-ivory-muted);
+  margin-top: 3px;
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-gold), transparent);
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* --------------------------------------------------------------------------
+   07. SECTION 02 — BRAND PHILOSOPHY (ASYMMETRIC EDITORIAL MANIFESTO)
+   -------------------------------------------------------------------------- */
+.section-philosophy {
+  background-color: var(--color-ivory-light);
+  position: relative;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.philosophy-split-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.philosophy-manifesto-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.philosophy-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.philosophy-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 3.1rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-burgundy);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.philosophy-headline em {
+  color: var(--color-gold-dark);
+  font-style: italic;
+}
+
+.philosophy-body {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: 2.25rem;
+}
+
+.philosophy-signature-block {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.signature-line {
+  width: 40px;
+  height: 1px;
+  background-color: var(--color-gold-dark);
+}
+
+.signature-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.signature-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+}
+
+.signature-role {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold-dark);
+  margin-top: 2px;
+}
+
+/* Philosophy Right Card */
+.philosophy-card-col {
+  position: relative;
+}
+
+.philosophy-seal-card {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.25rem;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.seal-card-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold-dark);
+}
+
+.seal-quote {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-burgundy);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.seal-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* --------------------------------------------------------------------------
+   08. SECTION 03 — EDITORIAL CREDIBILITY BENCHMARKS
+   -------------------------------------------------------------------------- */
+.section-stats {
+  background-color: var(--color-burgundy-dark);
+  padding: 5rem 0;
+  border-top: 1px solid var(--color-gold-subtle);
+  border-bottom: 1px solid var(--color-gold-subtle);
+  color: var(--color-ivory-light);
+}
+
+.stats-header-compact {
+  margin-bottom: 3rem;
+}
+
+.editorial-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.editorial-stat-card {
+  background: var(--gradient-burgundy-card);
+  border: 1px solid var(--color-gold-subtle);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.editorial-stat-card:hover {
+  background: var(--gradient-burgundy-card-hover);
+  border-color: var(--color-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.45);
+}
+
+.stat-index {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4.2vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-gold);
+  margin-bottom: 0.85rem;
+}
+
+.stat-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-ivory-muted);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   09. SECTION 04 — CRAFTSMANSHIP FEATURE CARDS
+   -------------------------------------------------------------------------- */
+.section-craft {
+  background-color: var(--color-ivory);
+}
+
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   09. SECTION 04 — CRAFTSMANSHIP FEATURE CARDS (HORIZONTAL EDITORIAL ROWS)
+   -------------------------------------------------------------------------- */
+.section-craft {
+  background-color: var(--color-ivory-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.editorial-craft-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.craft-editorial-row {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem 2.5rem;
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 1.5fr 0.6fr;
+  gap: 2.5rem;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.craft-editorial-row:hover {
+  border-color: var(--color-gold-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  background-color: #FFFFFF;
+}
+
+.craft-row-num {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  color: var(--color-gold-dark);
+  line-height: 1;
+}
+
+.craft-row-title-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.craft-row-desc-col {
+  display: flex;
+  align-items: center;
+}
+
+.craft-row-desc-col .craft-description {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.craft-row-img-col {
+  width: 100%;
+  height: 110px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+}
+
+.craft-row-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.craft-editorial-row:hover .craft-row-img {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   10. SECTION 05 — STORY & MASTERY SPREAD
+   -------------------------------------------------------------------------- */
+.section-story {
+  background-color: var(--color-burgundy-dark);
+  color: var(--color-ivory-light);
+  overflow: hidden;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-image-column {
+  position: relative;
+}
+
+.story-image-main {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gold-subtle);
+  box-shadow: var(--shadow-dark);
+}
+
+.story-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background-color: var(--color-burgundy);
+  border: 1px solid var(--color-gold);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-dark);
+}
+
+.story-badge-num {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.story-badge-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-ivory-muted);
+  margin-top: 0.25rem;
+}
+
+.story-text-column {
+  padding-left: 1rem;
+}
+
+.story-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--color-ivory-light);
+  margin-bottom: 1.5rem;
+}
+
+.story-paragraph {
+  font-size: 0.95rem;
+  color: var(--color-text-ivory-subtle);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. SECTION 06 — THE BESPOKE JOURNEY (EXECUTIVE STEP CARDS GRID)
+   -------------------------------------------------------------------------- */
+.section-process {
+  background-color: var(--color-burgundy-dark);
+  color: var(--color-ivory-light);
+  border-top: 1px solid var(--color-gold-subtle);
+  border-bottom: 1px solid var(--color-gold-subtle);
+}
+
+.executive-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.executive-step-card {
+  background: var(--gradient-burgundy-card);
+  border: 1px solid var(--color-gold-subtle);
+  border-radius: var(--radius-sm);
+  padding: 2.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.executive-step-card:hover {
+  background: var(--gradient-burgundy-card-hover);
+  border-color: var(--color-gold);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+}
+
+.step-card-num {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+
+.step-card-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-ivory-muted);
+  margin-bottom: 0.5rem;
+}
+
+.step-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--color-ivory-light);
+  margin-bottom: 0.35rem;
+}
+
+.step-card-subtitle {
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.step-card-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-ivory-subtle);
+  line-height: 1.75;
+}
+
+/* --------------------------------------------------------------------------
+   12. SECTION 07 — SIGNATURE COLLECTION CATALOGUE
+   -------------------------------------------------------------------------- */
+.section-collection {
+  background-color: var(--color-ivory);
+}
+
+/* Collection Filter Tabs */
+.filter-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.0rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--color-border-light);
+  padding: 0.6rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--color-burgundy);
+  color: var(--color-gold);
+  border-color: var(--color-burgundy);
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: var(--color-ivory-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-gold-border);
+}
+
+.product-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 130%; /* Aspect ratio */
+  overflow: hidden;
+  background-color: var(--color-burgundy-dark);
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: rgba(33, 7, 8, 0.85);
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gold-subtle);
+}
+
+.product-content {
+  padding: 1.5rem;
+}
+
+.product-subtitle {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold-dark);
+  margin-bottom: 0.35rem;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  color: var(--color-burgundy);
+  margin-bottom: 0.5rem;
+}
+
+.product-specs {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.product-link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-burgundy);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.product-card:hover .product-link {
+  color: var(--color-gold-dark);
+}
+
+/* --------------------------------------------------------------------------
+   13. SECTION 08 — MATERIAL & FABRIC LIBRARY
+   -------------------------------------------------------------------------- */
+.section-materials {
+  background-color: var(--color-ivory-light);
+}
+
+.fabric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.fabric-card {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  transition: var(--transition-fast);
+}
+
+.fabric-card:hover {
+  border-color: var(--color-gold-border);
+  transform: translateY(-4px);
+}
+
+.fabric-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+}
+
+.fabric-mill {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold-dark);
+}
+
+.fabric-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-burgundy);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.fabric-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   14. SECTION 09 — BESPOKE SERVICE MENU (LIGHT IVORY EDITORIAL)
+   -------------------------------------------------------------------------- */
+.section-services {
+  background-color: var(--color-ivory-light);
+  color: var(--color-text-dark);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.editorial-menu-card {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.editorial-menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-gold-border);
+}
+
+.editorial-menu-card.featured {
+  border-color: var(--color-gold);
+  background-color: var(--color-ivory-light);
+  box-shadow: 0 15px 35px rgba(33, 7, 8, 0.08);
+}
+
+.tier-roman-num {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+}
+
+.tier-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-burgundy);
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding: 0.4rem 1.25rem;
+  border-radius: 20px;
+  border: 1px solid var(--color-gold);
+}
+
+.tier-name {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-burgundy);
+  margin-bottom: 0.35rem;
+}
+
+.tier-subtitle {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold-dark);
+  margin-bottom: 1.5rem;
+}
+
+.tier-price-est {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-burgundy-light);
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.tier-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-grow: 1;
+}
+
+.tier-feature-item {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.5;
+}
+
+.diamond-bullet {
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   15. SECTION 10 — PRESS & TESTIMONIALS
+   -------------------------------------------------------------------------- */
+.section-testimonials {
+  background-color: var(--color-ivory);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background-color: var(--color-ivory-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quote-icon {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-burgundy);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 1.25rem;
+}
+
+.author-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.author-source {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gold-dark);
+}
+
+/* --------------------------------------------------------------------------
+   16. SECTION 11 — ARTISANS & MASTER TAILORS
+   -------------------------------------------------------------------------- */
+.section-team {
+  background-color: var(--color-ivory-light);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-image-wrapper {
+  width: 100%;
+  padding-top: 120%;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--color-border-light);
+}
+
+.team-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: transform var(--transition-slow);
+}
+
+.team-card:hover .team-image {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.team-name {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-burgundy);
+  margin-bottom: 0.25rem;
+}
+
+.team-role {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-gold-dark);
+  margin-bottom: 0.5rem;
+}
+
+.team-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   17. SECTION 11 — WHY CHOOSE US (EDITORIAL PILLARS ARCHITECTURE)
+   -------------------------------------------------------------------------- */
+.section-why-us {
+  background-color: var(--color-burgundy-dark);
+  color: var(--color-ivory-light);
+  border-top: 1px solid var(--color-gold-subtle);
+  border-bottom: 1px solid var(--color-gold-subtle);
+}
+
+.pillars-editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 2.5rem;
+}
+
+.pillar-item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-gold-subtle);
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.pillar-item:hover {
+  border-bottom-color: var(--color-gold);
+  transform: translateY(-4px);
+}
+
+.pillar-num {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+}
+
+.pillar-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-ivory-muted);
+  margin-bottom: 0.5rem;
+}
+
+.pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--color-ivory-light);
+  margin-bottom: 0.75rem;
+}
+
+.pillar-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-ivory-subtle);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   18. SECTION 13 — PRIVATE FITTING CONSULTATION SUITE (EDITORIAL DUAL-PANEL)
+   -------------------------------------------------------------------------- */
+.section-contact {
+  background-color: var(--color-ivory-light);
+  color: var(--color-text-dark);
+  border-top: 1px solid var(--color-border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left Panel Info */
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.concierge-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.gold-crest-mini {
+  width: 28px;
+  height: 28px;
+}
+
+.concierge-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold-dark);
+}
+
+.contact-title {
+  font-size: clamp(2.25rem, 3.8vw, 3.25rem);
+  color: var(--color-burgundy);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.contact-title em {
+  color: var(--color-gold-dark);
+}
+
+.contact-description {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.concierge-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: 2rem;
+}
+
+.concierge-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.concierge-label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold-dark);
+  margin-bottom: 0.35rem;
+}
+
+.concierge-val {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-burgundy);
+  line-height: 1.2;
+}
+
+a.concierge-val:hover {
+  color: var(--color-gold-dark);
+}
+
+.confidentiality-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Base Form Grid Layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-burgundy);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  background-color: var(--color-ivory-light);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.15rem;
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold-dark);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.15);
+}
+
+.form-select option {
+  background-color: #FFFFFF;
+  color: var(--color-text-dark);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-submit-wrapper {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.form-notice {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Editorial Form Card */
+.editorial-form {
+  background-color: var(--color-ivory);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-subtle);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-header-sub {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.form-step-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold-dark);
+}
+
+/* --------------------------------------------------------------------------
+   19. FOOTER & FLOATING WHATSAPP ACTION
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--gradient-burgundy-dark);
+  color: var(--color-ivory-light);
+  padding: 5rem 0 2.5rem;
+  border-top: 1px solid var(--color-gold-subtle);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-ivory-light);
+  letter-spacing: 0.15em;
+}
+
+.footer-brand-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-ivory-subtle);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.footer-title {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-link {
+  font-size: 0.85rem;
+  color: var(--color-text-ivory-subtle);
+}
+
+.footer-link:hover {
+  color: var(--color-gold);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-gold-subtle);
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-ivory-subtle);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 54px;
+  height: 54px;
+  background-color: #25D366;
+  color: #FFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  transition: transform var(--transition-fast);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}

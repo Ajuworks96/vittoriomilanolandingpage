@@ -1,0 +1,221 @@
+/* ==========================================================================
+   VITTORIO MILANO — RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+  :root {
+    --container-max: 1380px;
+    --section-padding: 140px 0;
+  }
+}
+
+/* Medium Desktop & Laptops (1024px – 1279px) */
+@media (max-width: 1279px) {
+  .craft-grid,
+  .collection-grid,
+  .fabric-grid,
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main-nav {
+    gap: 1.5rem;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5rem;
+  }
+
+  .process-grid::before {
+    display: none;
+  }
+}
+
+/* Tablet (768px – 1023px) */
+@media (max-width: 1023px) {
+  :root {
+    --section-padding: 90px 0;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    padding-top: 3rem;
+  }
+
+  .hero-title {
+    font-size: 3.25rem;
+  }
+
+  .main-nav,
+  .header-actions .phone-link {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .stats-grid,
+  .editorial-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+
+  .philosophy-split-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .craft-editorial-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.75rem;
+  }
+
+  .craft-row-img-col {
+    height: 180px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .story-text-column {
+    padding-left: 0;
+  }
+
+  .tiers-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tier-card.featured {
+    transform: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 3rem;
+  }
+
+  .process-detail-box {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* Mobile Devices (Max 767px) */
+@media (max-width: 767px) {
+  :root {
+    --section-padding: 70px 0;
+    --container-padding: 1.25rem;
+  }
+
+  .site-header {
+    padding: 1rem 0;
+  }
+
+  .official-brand-logo {
+    height: 42px;
+  }
+
+  .hero-content-wrapper {
+    padding: 7rem 1rem 3rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .stats-grid,
+  .editorial-stats-grid {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .stat-item::after {
+    display: none;
+  }
+
+  .craft-grid,
+  .collection-grid,
+  .fabric-grid,
+  .team-grid,
+  .why-grid,
+  .pillars-editorial-grid,
+  .executive-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .luxury-form {
+    padding: 2rem 1.25rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .form-submit-wrapper {
+    grid-column: span 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .story-badge {
+    bottom: -10px;
+    right: 0;
+    padding: 1rem 1.25rem;
+  }
+}
+
+/* Small Mobile Devices (Max 390px) */
+@media (max-width: 390px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.85rem; }
+  
+  .btn {
+    padding: 0.95rem 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
