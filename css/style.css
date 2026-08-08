@@ -254,13 +254,13 @@ em, .italic-accent {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  padding: 1.1rem 2.5rem;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: var(--transition-smooth);
@@ -268,6 +268,12 @@ em, .italic-accent {
   overflow: hidden;
   border: 1px solid transparent;
   white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 0.55rem 1.25rem !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.22em !important;
 }
 
 .btn-gold {
@@ -431,6 +437,17 @@ em, .italic-accent {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+}
+
+.header-actions .btn {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  border-color: rgba(201, 164, 92, 0.4);
+}
+
+.site-header.scrolled .header-actions .btn {
+  padding: 0.5rem 1.15rem;
 }
 
 .phone-link {
