@@ -114,14 +114,39 @@
     transform: none;
   }
 
+  .manifesto-stanzas-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .philosophy-triptych {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .benchmarks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .fabric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .pillars-editorial-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     row-gap: 3rem;
-  }
-
-  .process-detail-box {
-    grid-template-columns: 1fr;
-    padding: 2rem;
   }
 
   .contact-container {
@@ -158,6 +183,15 @@
     width: 100%;
   }
 
+  .hero-metrics-strip {
+    flex-wrap: wrap;
+    gap: 1.25rem 2rem;
+  }
+
+  .hero-metric-divider {
+    display: none;
+  }
+
   .stats-grid,
   .editorial-stats-grid {
     grid-template-columns: 1fr;
@@ -173,6 +207,7 @@
   .fabric-grid,
   .team-grid,
   .why-grid,
+  .benchmarks-grid,
   .pillars-editorial-grid,
   .executive-process-grid {
     grid-template-columns: 1fr;
