@@ -1857,88 +1857,102 @@ body.admin-bar .site-header,
 }
 
 /* --------------------------------------------------------------------------
-   18. SECTION 13 — PRIVATE FITTING CONSULTATION SUITE (EDITORIAL DUAL-PANEL)
+/* --------------------------------------------------------------------------
+   18. SECTION 11 — PRIVATE CONSULTATION SUITE (DUAL-PANEL EDITORIAL)
    -------------------------------------------------------------------------- */
 .section-contact {
-  background-color: var(--color-ivory-light);
-  color: var(--color-text-dark);
-  border-top: 1px solid var(--color-border-light);
+  background: radial-gradient(ellipse at 50% 12%, #320602 0%, #170301 55%, #0B0100 100%);
+  color: var(--color-ivory-light);
+  border-top: 1px solid var(--color-gold-subtle);
   position: relative;
   overflow: hidden;
 }
 
-.contact-container {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 4rem;
-  align-items: start;
+.section-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(201, 164, 92, 0.07) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(96, 12, 3, 0.3) 0%, transparent 55%);
+  pointer-events: none;
 }
 
-/* Left Panel Info */
-.contact-info-panel {
+.contact-suite-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 2.75rem;
+  align-items: stretch;
+  position: relative;
+  z-index: 2;
+}
+
+/* Common Suite Card Shell (Guaranteed Top Alignment & Equal Heights) */
+.contact-concierge-card,
+.contact-form-card {
+  background: linear-gradient(165deg, rgba(50, 6, 2, 0.6) 0%, rgba(18, 2, 1, 0.85) 100%);
+  border: 1px solid rgba(201, 164, 92, 0.22);
+  border-radius: var(--radius-sm);
+  padding: clamp(2rem, 3.2vw, 3rem);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(201, 164, 92, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.concierge-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
+.contact-concierge-card:hover,
+.contact-form-card:hover {
+  border-color: rgba(201, 164, 92, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(201, 164, 92, 0.28);
 }
 
-.gold-crest-mini {
-  width: 28px;
-  height: 28px;
+/* Card Headers (Uniform Visual Hierarchy) */
+.suite-card-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(201, 164, 92, 0.18);
 }
 
-.concierge-eyebrow {
-  font-size: 0.7rem;
-  font-weight: 600;
+.suite-card-tag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-gold-dark);
+  letter-spacing: 0.24em;
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 0.4rem;
 }
 
-.contact-title {
-  font-size: clamp(2.25rem, 3.8vw, 3.25rem);
-  color: var(--color-burgundy);
-  line-height: 1.15;
-  margin-bottom: 1rem;
+.suite-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  color: var(--color-ivory-light);
+  line-height: 1.25;
+  font-weight: 400;
 }
 
-.contact-title em {
-  color: var(--color-gold-dark);
-}
-
-.contact-description {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.75;
-  margin-bottom: 2.5rem;
-}
-
-/* Section 11 Lead Manifesto Box & List */
+/* Left Card: Lead Commission Manifestos */
 .contact-lead-manifesto {
-  margin-top: 1.5rem;
-  margin-bottom: 2.75rem;
-  padding: 2.25rem 2.5rem;
-  background-color: var(--color-ivory);
-  border-left: 3px solid var(--color-gold-dark);
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.75rem;
+  background: rgba(201, 164, 92, 0.05);
+  border: 1px solid rgba(201, 164, 92, 0.2);
+  border-left: 3px solid var(--color-gold);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-subtle);
-  border: 1px solid var(--color-border-light);
-  border-left: 3px solid var(--color-gold-dark);
 }
 
 .contact-lead-prompt {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-burgundy);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.01em;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-gold-light);
+  margin-bottom: 1rem;
 }
 
 .contact-lead-list {
@@ -1947,16 +1961,15 @@ body.admin-bar .site-header,
   margin: 0 !important;
   display: flex;
   flex-direction: column;
-  gap: 0.95rem;
+  gap: 0.75rem;
 }
 
 .contact-lead-item {
-  list-style: none !important;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 1rem;
-  color: var(--color-text-muted);
+  gap: 0.85rem;
+  font-size: 0.92rem;
+  color: var(--color-text-ivory-subtle);
   line-height: 1.5;
 }
 
@@ -1964,35 +1977,29 @@ body.admin-bar .site-header,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
   background-color: rgba(201, 164, 92, 0.12);
-  border: 1px solid var(--color-gold-border);
+  border: 1px solid rgba(201, 164, 92, 0.35);
   border-radius: 50%;
   flex-shrink: 0;
-  color: var(--color-gold-dark);
+  color: var(--color-gold);
 }
 
-/* Concierge Info Box with Luxury Icons */
+/* Left Card: Concierge Info List */
 .concierge-info-box {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
-  width: 100%;
-  padding: 2.5rem 2.25rem;
-  background-color: var(--color-ivory);
-  border: 1px solid var(--color-gold-border);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-subtle);
-  margin-bottom: 2.5rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
 }
 
 .concierge-item {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(201, 164, 92, 0.12);
   transition: var(--transition-fast);
 }
 
@@ -2002,23 +2009,24 @@ body.admin-bar .site-header,
 }
 
 .concierge-icon-wrap {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
-  background: var(--gradient-burgundy-card);
-  border: 1px solid var(--color-gold-subtle);
+  background: rgba(201, 164, 92, 0.08);
+  border: 1px solid rgba(201, 164, 92, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: var(--transition-fast);
   color: var(--color-gold);
+  transition: all var(--transition-fast);
 }
 
 .concierge-item:hover .concierge-icon-wrap {
+  background: rgba(201, 164, 92, 0.2);
   border-color: var(--color-gold);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(96, 12, 3, 0.3);
+  box-shadow: 0 6px 16px rgba(201, 164, 92, 0.2);
 }
 
 .concierge-text-wrap {
@@ -2031,37 +2039,47 @@ body.admin-bar .site-header,
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: var(--color-gold-dark);
-  margin-bottom: 0.35rem;
+  color: var(--color-gold);
+  margin-bottom: 0.25rem;
 }
 
 .concierge-val {
   font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--color-burgundy);
+  font-size: 1.15rem;
+  color: var(--color-ivory-light);
   line-height: 1.35;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 a.concierge-val:hover {
-  color: var(--color-gold-dark);
+  color: var(--color-gold);
 }
 
 .confidentiality-notice {
+  margin-top: auto;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-ivory-subtle);
   letter-spacing: 0.05em;
-  padding-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(201, 164, 92, 0.12);
 }
 
-/* Base Form Grid Layout */
+.confidentiality-notice svg {
+  flex-shrink: 0;
+}
+
+/* Right Card: Form Styling */
+.luxury-form {
+  width: 100%;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1.25rem;
   width: 100%;
 }
 
@@ -2069,7 +2087,6 @@ a.concierge-val:hover {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  width: 100%;
 }
 
 .form-group.full-width {
@@ -2081,7 +2098,7 @@ a.concierge-val:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: var(--color-burgundy);
+  color: var(--color-gold);
 }
 
 .form-input,
@@ -2090,33 +2107,47 @@ a.concierge-val:hover {
   width: 100%;
   display: block;
   box-sizing: border-box;
-  background-color: var(--color-ivory-light);
-  border: 1px solid var(--color-border-light);
+  background-color: rgba(14, 2, 2, 0.65);
+  border: 1px solid rgba(201, 164, 92, 0.24);
   border-radius: var(--radius-sm);
   padding: 0.85rem 1.15rem;
-  color: var(--color-text-dark);
+  color: var(--color-ivory-light);
   font-family: var(--font-sans);
   font-size: 0.875rem;
   outline: none;
-  transition: var(--transition-fast);
+  transition: all var(--transition-fast);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(250, 248, 241, 0.35);
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  border-color: var(--color-gold-dark);
-  background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.15);
+  border-color: var(--color-gold);
+  background-color: rgba(24, 3, 2, 0.85);
+  box-shadow: 0 0 16px rgba(201, 164, 92, 0.25);
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A45C' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.15rem center;
+  padding-right: 2.75rem;
+  cursor: pointer;
 }
 
 .form-select option {
-  background-color: #FFFFFF;
-  color: var(--color-text-dark);
+  background-color: #240402;
+  color: #FAF8F1;
 }
 
 .form-textarea {
   resize: vertical;
-  min-height: 110px;
+  min-height: 100px;
 }
 
 .form-submit-wrapper {
@@ -2124,39 +2155,57 @@ a.concierge-val:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
+}
+
+.btn-luxury-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #C9A45C 0%, #A5813A 100%);
+  color: #120200;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  padding: 1.15rem 2rem;
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 8px 24px rgba(201, 164, 92, 0.25);
+}
+
+.btn-luxury-submit:hover {
+  background: linear-gradient(135deg, #DFBF7A 0%, #C9A45C 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(201, 164, 92, 0.4);
+}
+
+.btn-luxury-submit .btn-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.btn-luxury-submit:hover .btn-arrow {
+  transform: translateX(5px);
 }
 
 .form-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.75rem;
-  color: var(--color-text-muted);
+  color: var(--color-text-ivory-subtle);
   margin-top: 1rem;
   text-align: center;
 }
 
-/* Editorial Form Card */
-.editorial-form {
-  background-color: var(--color-ivory);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-sm);
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-subtle);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.form-header-sub {
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-border-light);
-}
-
-.form-step-tag {
-  font-size: 0.65rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-gold-dark);
+.form-notice svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
