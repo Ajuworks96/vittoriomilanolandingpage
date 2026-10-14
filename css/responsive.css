@@ -217,6 +217,36 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .journey-cta-wrapper {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-journey {
+    width: 100%;
+    padding: 1.15rem 1.5rem;
+    font-size: 0.75rem;
+  }
+
+  .contact-lead-manifesto {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .concierge-info-box {
+    padding: 1.75rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .concierge-item {
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .concierge-icon-wrap {
+    width: 40px;
+    height: 40px;
+  }
+
   .luxury-form {
     padding: 2rem 1.25rem;
   }

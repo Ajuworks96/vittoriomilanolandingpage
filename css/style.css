@@ -1292,6 +1292,28 @@ body.admin-bar .site-header,
   line-height: 1.75;
 }
 
+/* Bespoke Journey Primary CTA Button Spacing */
+.journey-cta-wrapper {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-journey {
+  padding: 1.25rem 3rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.btn-journey:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(201, 164, 92, 0.25);
+}
+
 /* --------------------------------------------------------------------------
    12. SECTION 07 — SIGNATURE COLLECTION CATALOGUE
    -------------------------------------------------------------------------- */
@@ -1855,37 +1877,128 @@ body.admin-bar .site-header,
   margin-bottom: 2.5rem;
 }
 
+/* Section 11 Lead Manifesto Box & List */
+.contact-lead-manifesto {
+  margin-top: 1.5rem;
+  margin-bottom: 2.75rem;
+  padding: 2.25rem 2.5rem;
+  background-color: var(--color-ivory);
+  border-left: 3px solid var(--color-gold-dark);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid var(--color-border-light);
+  border-left: 3px solid var(--color-gold-dark);
+}
+
+.contact-lead-prompt {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-burgundy);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-lead-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.contact-lead-item {
+  list-style: none !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.lead-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: rgba(201, 164, 92, 0.12);
+  border: 1px solid var(--color-gold-border);
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: var(--color-gold-dark);
+}
+
+/* Concierge Info Box with Luxury Icons */
 .concierge-info-box {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.75rem;
   width: 100%;
-  padding: 2rem;
+  padding: 2.5rem 2.25rem;
   background-color: var(--color-ivory);
-  border: 1px solid var(--color-border-light);
+  border: 1px solid var(--color-gold-border);
   border-radius: var(--radius-sm);
-  margin-bottom: 2rem;
+  box-shadow: var(--shadow-subtle);
+  margin-bottom: 2.5rem;
 }
 
 .concierge-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border-light);
+  transition: var(--transition-fast);
+}
+
+.concierge-item:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.concierge-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--gradient-burgundy-card);
+  border: 1px solid var(--color-gold-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+  color: var(--color-gold);
+}
+
+.concierge-item:hover .concierge-icon-wrap {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(96, 12, 3, 0.3);
+}
+
+.concierge-text-wrap {
   display: flex;
   flex-direction: column;
 }
 
 .concierge-label {
-  font-size: 0.6rem;
-  font-weight: 600;
+  font-size: 0.625rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   color: var(--color-gold-dark);
   margin-bottom: 0.35rem;
 }
 
 .concierge-val {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--color-burgundy);
-  line-height: 1.2;
+  line-height: 1.35;
+  font-weight: 500;
 }
 
 a.concierge-val:hover {
@@ -1899,6 +2012,7 @@ a.concierge-val:hover {
   font-size: 0.75rem;
   color: var(--color-text-muted);
   letter-spacing: 0.05em;
+  padding-top: 0.5rem;
 }
 
 /* Base Form Grid Layout */
