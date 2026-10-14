@@ -45,6 +45,16 @@
     padding-top: 3rem;
   }
 
+  .hero-bg-image {
+    object-position: center 18%;
+  }
+
+  .hero-bg-overlay {
+    background:
+      linear-gradient(180deg, rgba(18, 3, 4, 0.94) 0%, rgba(18, 3, 4, 0.78) 45%, rgba(18, 3, 4, 0.92) 100%),
+      radial-gradient(circle at 50% 30%, rgba(96, 12, 3, 0.35) 0%, transparent 70%);
+  }
+
   .hero-title {
     font-size: 3.25rem;
   }
