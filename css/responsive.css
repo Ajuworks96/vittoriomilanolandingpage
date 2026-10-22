@@ -216,7 +216,7 @@
   }
 
   .section-credentials-bar {
-    padding: 1.4rem 0;
+    padding: 1.6rem 0;
   }
 
   .credential-item {
@@ -224,8 +224,16 @@
   }
 
   .credential-val {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
+    height: 24px;
+    margin-bottom: 0.35rem;
+  }
+
+  .credential-val-num {
+    font-size: 1.55rem;
+  }
+
+  .credential-val-word {
+    font-size: 1.05rem;
   }
 
   .credential-lab {
@@ -234,7 +242,7 @@
   }
 
   .credential-divider {
-    height: 22px;
+    height: 32px;
   }
 }
 
@@ -267,13 +275,13 @@
   }
 
   .section-credentials-bar {
-    padding: 1.5rem 0;
+    padding: 1.75rem 0;
   }
 
   .credentials-bar-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem 1.5rem;
+    gap: 1.5rem 1.5rem;
     max-width: 380px;
     margin: 0 auto;
   }
@@ -287,8 +295,16 @@
   }
 
   .credential-val {
-    font-size: 1.3rem;
-    margin-bottom: 0.25rem;
+    height: 26px;
+    margin-bottom: 0.35rem;
+  }
+
+  .credential-val-num {
+    font-size: 1.65rem;
+  }
+
+  .credential-val-word {
+    font-size: 1.12rem;
   }
 
   .credential-lab {

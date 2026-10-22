@@ -759,9 +759,9 @@ body.admin-bar .site-header,
 .section-credentials-bar {
   background: linear-gradient(180deg, #170200 0%, #200301 50%, #140200 100%);
   position: relative;
-  border-top: 1px solid rgba(201, 164, 92, 0.2);
-  border-bottom: 1px solid rgba(201, 164, 92, 0.15);
-  padding: 1.6rem 0;
+  border-top: 1px solid rgba(201, 164, 92, 0.22);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.18);
+  padding: 1.85rem 0;
   color: var(--color-ivory-light);
 }
 
@@ -770,7 +770,7 @@ body.admin-bar .site-header,
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -778,7 +778,7 @@ body.admin-bar .site-header,
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   transition: var(--transition-fast);
 }
 
@@ -792,14 +792,27 @@ body.admin-bar .site-header,
 
 .credential-val {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
-  font-weight: 400;
   font-style: normal !important;
   color: var(--color-gold);
   line-height: 1;
-  margin-bottom: 0.35rem;
-  letter-spacing: 0.05em;
+  height: 28px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0.45rem;
   transition: var(--transition-fast);
+}
+
+.credential-val-num {
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  font-variant-numeric: lining-nums;
+}
+
+.credential-val-word {
+  font-size: 1.22rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
 }
 
 .credential-item:hover .credential-val {
@@ -808,18 +821,18 @@ body.admin-bar .site-header,
 
 .credential-lab {
   font-family: var(--font-sans);
-  font-size: 0.58rem;
-  font-weight: 500;
+  font-size: 0.6rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: rgba(250, 248, 241, 0.65);
-  line-height: 1.45;
+  color: #D4C8B8;
+  line-height: 1.5;
 }
 
 .credential-divider {
   width: 1px;
-  height: 26px;
-  background-color: rgba(201, 164, 92, 0.2);
+  height: 38px;
+  background-color: rgba(201, 164, 92, 0.25);
   flex-shrink: 0;
 }
 
