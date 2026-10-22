@@ -1264,80 +1264,137 @@ body.admin-bar .site-header,
    11. SECTION 06 — THE BESPOKE JOURNEY (EXECUTIVE STEP CARDS GRID)
    -------------------------------------------------------------------------- */
 .section-process {
-  background-color: var(--color-burgundy-dark);
-  color: var(--color-ivory-light);
-  border-top: 1px solid var(--color-gold-subtle);
-  border-bottom: 1px solid var(--color-gold-subtle);
+  background-color: var(--color-ivory-light);
+  color: var(--color-text-dark);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  position: relative;
 }
 
-.executive-process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
+.section-process .section-eyebrow {
+  color: var(--color-gold-dark);
 }
 
-.executive-step-card {
-  background: var(--gradient-burgundy-card);
-  border: 1px solid var(--color-gold-subtle);
+.section-process .section-title {
+  color: var(--color-burgundy);
+}
+
+.section-process .section-title em {
+  color: var(--color-burgundy);
+  font-style: italic !important;
+}
+
+/* 6-Step Single-Line Bespoke Journey Process Timeline */
+.journey-process-timeline {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-top: 3.5rem;
+  width: 100%;
+}
+
+.journey-step-card {
+  flex: 1 1 0;
+  min-width: 0;
+  background: #FFFFFF;
+  border: 1px solid rgba(80, 50, 30, 0.12);
   border-radius: var(--radius-sm);
-  padding: 2.75rem 2rem;
+  padding: 1.85rem 1.25rem 2rem;
   display: flex;
   flex-direction: column;
-  position: relative;
+  justify-content: flex-start;
+  min-height: 220px;
+  box-shadow: 0 4px 18px rgba(40, 26, 24, 0.04);
   transition: var(--transition-smooth);
 }
 
-.executive-step-card:hover {
-  background: var(--gradient-burgundy-card-hover);
+.journey-step-card:hover {
   border-color: var(--color-gold);
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(96, 12, 3, 0.08);
 }
 
-.step-card-num {
+.journey-step-num {
   font-family: var(--font-serif);
-  font-size: 2.75rem;
-  color: var(--color-gold);
+  font-size: 0.95rem;
+  font-weight: 400;
+  font-style: italic !important;
+  color: #B89758;
   line-height: 1;
-  margin-bottom: 0.85rem;
+  margin-bottom: 1.15rem;
+  letter-spacing: 0.02em;
 }
 
-.step-card-tag {
-  font-size: 0.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: var(--color-ivory-muted);
-  margin-bottom: 0.5rem;
-}
-
-.step-card-title {
+.journey-step-title {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
-  color: var(--color-ivory-light);
-  margin-bottom: 0.35rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: normal !important;
+  color: var(--color-burgundy);
+  line-height: 1.22;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
 }
 
-.step-card-subtitle {
-  font-size: 0.725rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
+.journey-step-title em {
+  font-style: italic !important;
+  font-weight: 400;
+  color: var(--color-burgundy);
+}
+
+.journey-step-desc {
+  font-family: var(--font-sans);
+  font-size: 0.815rem;
+  color: #5E5650;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.journey-step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background-color: #F8F5EE;
+  border-radius: 2px;
   color: var(--color-gold);
-  margin-bottom: 1.25rem;
+  align-self: center;
+  transition: var(--transition-smooth);
 }
 
-.step-card-desc {
-  font-size: 0.875rem;
-  color: var(--color-text-ivory-subtle);
-  line-height: 1.75;
+.journey-step-arrow svg {
+  display: block;
+}
+
+.journey-step-card:hover + .journey-step-arrow {
+  color: var(--color-burgundy);
+  transform: translateX(2px);
+}
+
+@media (max-width: 1280px) and (min-width: 1025px) {
+  .journey-step-card {
+    padding: 1.5rem 0.85rem 1.75rem;
+    min-height: 210px;
+  }
+  .journey-step-title {
+    font-size: 1.15rem;
+  }
+  .journey-step-desc {
+    font-size: 0.775rem;
+  }
+  .journey-step-arrow {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* Bespoke Journey Primary CTA Button Spacing */
 .journey-cta-wrapper {
-  margin-top: 5rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1348,12 +1405,12 @@ body.admin-bar .site-header,
   padding: 1.25rem 3rem;
   font-size: 0.8rem;
   letter-spacing: 0.22em;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(96, 12, 3, 0.12);
 }
 
 .btn-journey:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(201, 164, 92, 0.25);
+  box-shadow: 0 15px 35px rgba(201, 164, 92, 0.35);
 }
 
 /* --------------------------------------------------------------------------
