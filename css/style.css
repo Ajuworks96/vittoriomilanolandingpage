@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: clamp(2rem, 3.8vw, 3.25rem); }
+h2 { font-size: 1.85rem !important; line-height: 1.25; }
 h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
 h4 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); }
 
@@ -211,6 +211,8 @@ em, .italic-accent {
 }
 
 .section-title {
+  font-size: 1.85rem !important;
+  line-height: 1.25;
   margin-bottom: 1.25rem;
 }
 
@@ -866,12 +868,12 @@ body.admin-bar .site-header,
 
 .manifesto-house-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.35rem, 4vw, 3.65rem);
+  font-size: 1.85rem !important;
   font-weight: 400;
   letter-spacing: -0.01em;
   color: var(--color-burgundy);
   margin-top: 0;
-  line-height: 1.15;
+  line-height: 1.25;
 }
 
 .manifesto-editorial-spread {
@@ -1293,7 +1295,8 @@ body.admin-bar .site-header,
 }
 
 .story-title {
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: 1.85rem !important;
+  line-height: 1.25;
   color: var(--color-ivory-light);
   margin-bottom: 1.5rem;
 }
