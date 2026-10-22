@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 /* ==========================================================================
    VITTORIO MILANO — THE ARTISTRY OF BESPOKE
    Core Stylesheet & Design System
@@ -43,7 +45,7 @@
   --color-border-light: rgba(80, 50, 30, 0.12);
 
   /* Typography */
-  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Montserrat', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Spacing System */
@@ -136,7 +138,20 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-h2 { font-size: 1.85rem !important; line-height: 1.25; }
+h2,
+.section-title,
+.manifesto-house-title,
+.story-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 1.85rem !important;
+  line-height: 1.25;
+}
+h2 em,
+.section-title em,
+.manifesto-house-title em,
+.story-title em {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+}
 h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
 h4 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); }
 
@@ -211,6 +226,7 @@ em, .italic-accent {
 }
 
 .section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
   font-size: 1.85rem !important;
   line-height: 1.25;
   margin-bottom: 1.25rem;
@@ -867,7 +883,7 @@ body.admin-bar .site-header,
 }
 
 .manifesto-house-title {
-  font-family: var(--font-serif);
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
   font-size: 1.85rem !important;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -1295,6 +1311,7 @@ body.admin-bar .site-header,
 }
 
 .story-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
   font-size: 1.85rem !important;
   line-height: 1.25;
   color: var(--color-ivory-light);
