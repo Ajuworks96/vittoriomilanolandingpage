@@ -216,24 +216,25 @@
   }
 
   .section-credentials-bar {
-    padding: 2.75rem 0;
+    padding: 1.4rem 0;
   }
 
   .credential-item {
-    padding: 0 1.25rem;
+    padding: 0 0.85rem;
   }
 
   .credential-val {
-    font-size: 2rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
   }
 
   .credential-lab {
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
+    font-size: 0.54rem;
+    letter-spacing: 0.16em;
   }
 
   .credential-divider {
-    height: 42px;
+    height: 22px;
   }
 }
 
@@ -266,13 +267,15 @@
   }
 
   .section-credentials-bar {
-    padding: 2.5rem 0;
+    padding: 1.5rem 0;
   }
 
   .credentials-bar-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem 1.5rem;
+    gap: 1.25rem 1.5rem;
+    max-width: 380px;
+    margin: 0 auto;
   }
 
   .credential-divider {
@@ -284,12 +287,13 @@
   }
 
   .credential-val {
-    font-size: 1.85rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
   }
 
   .credential-lab {
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
+    font-size: 0.54rem;
+    letter-spacing: 0.16em;
   }
 
   .stats-grid,

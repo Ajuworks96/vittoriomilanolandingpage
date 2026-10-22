@@ -757,13 +757,12 @@ body.admin-bar .site-header,
    06B. SARTORIAL CREDENTIALS ACCREDITATION BAR (NEXT TO HERO)
    -------------------------------------------------------------------------- */
 .section-credentials-bar {
-  background: linear-gradient(180deg, #180200 0%, #240401 50%, #150200 100%);
+  background: linear-gradient(180deg, #170200 0%, #200301 50%, #140200 100%);
   position: relative;
-  border-top: 1px solid rgba(201, 164, 92, 0.28);
-  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
-  padding: 3.5rem 0;
+  border-top: 1px solid rgba(201, 164, 92, 0.2);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.15);
+  padding: 1.6rem 0;
   color: var(--color-ivory-light);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .credentials-bar-inner {
@@ -771,14 +770,16 @@ body.admin-bar .site-header,
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .credential-item {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 2.25rem;
-  transition: var(--transition-smooth);
+  padding: 0 1.5rem;
+  transition: var(--transition-fast);
 }
 
 .credential-item:first-child {
@@ -791,35 +792,34 @@ body.admin-bar .site-header,
 
 .credential-val {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 3.2vw, 2.9rem);
-  font-weight: 300;
+  font-size: 1.45rem;
+  font-weight: 400;
   font-style: normal !important;
   color: var(--color-gold);
   line-height: 1;
-  margin-bottom: 0.85rem;
-  letter-spacing: 0.04em;
-  transition: var(--transition-smooth);
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.05em;
+  transition: var(--transition-fast);
 }
 
 .credential-item:hover .credential-val {
   color: var(--color-gold-light);
-  transform: translateY(-2px);
 }
 
 .credential-lab {
   font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 600;
+  font-size: 0.58rem;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: #D6CCC0;
-  line-height: 1.55;
+  color: rgba(250, 248, 241, 0.65);
+  line-height: 1.45;
 }
 
 .credential-divider {
   width: 1px;
-  height: 52px;
-  background-color: rgba(201, 164, 92, 0.25);
+  height: 26px;
+  background-color: rgba(201, 164, 92, 0.2);
   flex-shrink: 0;
 }
 
