@@ -214,6 +214,27 @@
   .journey-step-arrow {
     flex-shrink: 0;
   }
+
+  .section-credentials-bar {
+    padding: 2.75rem 0;
+  }
+
+  .credential-item {
+    padding: 0 1.25rem;
+  }
+
+  .credential-val {
+    font-size: 2rem;
+  }
+
+  .credential-lab {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+  }
+
+  .credential-divider {
+    height: 42px;
+  }
 }
 
 /* Mobile Devices (Max 767px) */
@@ -244,13 +265,31 @@
     width: 100%;
   }
 
-  .hero-metrics-strip {
-    flex-wrap: wrap;
-    gap: 1.25rem 2rem;
+  .section-credentials-bar {
+    padding: 2.5rem 0;
   }
 
-  .hero-metric-divider {
+  .credentials-bar-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1.5rem;
+  }
+
+  .credential-divider {
     display: none;
+  }
+
+  .credential-item {
+    padding: 0;
+  }
+
+  .credential-val {
+    font-size: 1.85rem;
+  }
+
+  .credential-lab {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
   }
 
   .stats-grid,

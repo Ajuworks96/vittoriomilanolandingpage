@@ -750,45 +750,77 @@ body.admin-bar .site-header,
   align-items: center;
   gap: 1.25rem;
   flex-wrap: wrap;
-  margin-bottom: 3.5rem;
+  margin-bottom: 0;
 }
 
-/* Embedded Hero Metrics Strip */
-.hero-metrics-strip {
+/* --------------------------------------------------------------------------
+   06B. SARTORIAL CREDENTIALS ACCREDITATION BAR (NEXT TO HERO)
+   -------------------------------------------------------------------------- */
+.section-credentials-bar {
+  background: linear-gradient(180deg, #180200 0%, #240401 50%, #150200 100%);
+  position: relative;
+  border-top: 1px solid rgba(201, 164, 92, 0.28);
+  border-bottom: 1px solid rgba(201, 164, 92, 0.2);
+  padding: 3.5rem 0;
+  color: var(--color-ivory-light);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.credentials-bar-inner {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--color-gold-subtle);
+  justify-content: space-between;
   width: 100%;
-  max-width: 760px;
 }
 
-.hero-metric-item {
+.credential-item {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 0 2.25rem;
+  transition: var(--transition-smooth);
 }
 
-.metric-val {
+.credential-item:first-child {
+  padding-left: 0;
+}
+
+.credential-item:last-child {
+  padding-right: 0;
+}
+
+.credential-val {
   font-family: var(--font-serif);
-  font-size: 1.65rem;
+  font-size: clamp(2.2rem, 3.2vw, 2.9rem);
+  font-weight: 300;
+  font-style: normal !important;
   color: var(--color-gold);
   line-height: 1;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.04em;
+  transition: var(--transition-smooth);
 }
 
-.metric-lab {
-  font-size: 0.625rem;
+.credential-item:hover .credential-val {
+  color: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+.credential-lab {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-ivory-muted);
-  margin-top: 0.35rem;
+  letter-spacing: 0.22em;
+  color: #D6CCC0;
+  line-height: 1.55;
 }
 
-.hero-metric-divider {
+.credential-divider {
   width: 1px;
-  height: 35px;
-  background-color: var(--color-gold-subtle);
+  height: 52px;
+  background-color: rgba(201, 164, 92, 0.25);
+  flex-shrink: 0;
 }
 
 .hero-scroll-line {
