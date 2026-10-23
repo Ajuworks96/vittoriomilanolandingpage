@@ -339,6 +339,32 @@
     margin-bottom: 2rem;
   }
 
+  /* Seamless Full-Bleed Mobile Hero Background (No Cutting / No Vertical Edges) */
+  .section-hero::before {
+    display: none !important;
+  }
+
+  .hero-bg-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-bg-wrapper picture,
+  .hero-bg-wrapper .hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: brightness(0.76) contrast(1.05) saturate(1.1);
+  }
+
+  .hero-bg-overlay {
+    background:
+      linear-gradient(180deg, rgba(14, 3, 4, 0.88) 0%, rgba(14, 3, 4, 0.48) 18%, rgba(14, 3, 4, 0.28) 35%, rgba(14, 3, 4, 0.48) 65%, rgba(14, 3, 4, 0.86) 88%, #120304 100%) !important;
+  }
+
   /* Section 02: Foundational Creed */
   .manifesto-creed {
     font-size: 1.1rem !important;
@@ -608,10 +634,20 @@
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
   }
 
   .hero-actions .btn {
     width: 100%;
+    padding: 0.9rem 1.15rem !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.16em !important;
+    white-space: normal !important;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   .section-credentials-bar {

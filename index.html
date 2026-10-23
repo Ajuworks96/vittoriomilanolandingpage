@@ -115,7 +115,10 @@
   <section class="section section-hero" id="hero">
     <!-- Atmospheric Atelier Hero Background with Luxury Fade Overlay -->
     <div class="hero-bg-wrapper">
-      <img src="images/hero-bg.jpg" alt="Vittorio Milano Sartoria Atelier" class="hero-bg-image" fetchpriority="high">
+      <picture>
+        <source media="(max-width: 768px)" srcset="images/hero-bg-mobile.jpg">
+        <img src="images/hero-bg.jpg" alt="Vittorio Milano Sartoria Atelier" class="hero-bg-image" fetchpriority="high">
+      </picture>
       <div class="hero-bg-overlay"></div>
     </div>
 
