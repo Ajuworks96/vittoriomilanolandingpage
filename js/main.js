@@ -31,35 +31,58 @@ function initHeaderScroll() {
 }
 
 /**
- * 02. Mobile Navigation Drawer Toggle
+ * 02. Mobile Navigation Drawer Toggle & Close Handlers
  */
 function initMobileNav() {
   const toggleBtn = document.querySelector('.mobile-nav-toggle');
   const drawer = document.querySelector('.mobile-nav-drawer');
+  const backdrop = document.getElementById('mobile-drawer-backdrop');
+  const closeBtn = document.getElementById('mobile-drawer-close');
   const mobileLinks = document.querySelectorAll('.mobile-menu-link');
 
-  if (!toggleBtn || !drawer) return;
+  if (!drawer) return;
 
-  const toggleMenu = () => {
-    const isActive = drawer.classList.contains('active');
-    if (isActive) {
-      drawer.classList.remove('active');
-      toggleBtn.classList.remove('active');
-      document.body.style.overflow = '';
-    } else {
-      drawer.classList.add('active');
-      toggleBtn.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
+  const openDrawer = () => {
+    drawer.classList.add('active');
+    if (toggleBtn) toggleBtn.classList.add('active');
+    if (backdrop) backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
   };
 
-  toggleBtn.addEventListener('click', toggleMenu);
+  const closeDrawer = () => {
+    drawer.classList.remove('active');
+    if (toggleBtn) toggleBtn.classList.remove('active');
+    if (backdrop) backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      if (drawer.classList.contains('active')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', closeDrawer);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
 
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
-      drawer.classList.remove('active');
-      toggleBtn.classList.remove('active');
-      document.body.style.overflow = '';
+      closeDrawer();
     });
   });
 }
@@ -145,9 +168,11 @@ function initContactModal() {
     // If mobile drawer was open, close it cleanly
     const drawer = document.querySelector('.mobile-nav-drawer');
     const toggleBtn = document.querySelector('.mobile-nav-toggle');
+    const drawerBackdrop = document.getElementById('mobile-drawer-backdrop');
     if (drawer && drawer.classList.contains('active')) {
       drawer.classList.remove('active');
       if (toggleBtn) toggleBtn.classList.remove('active');
+      if (drawerBackdrop) drawerBackdrop.classList.remove('active');
     }
 
     // Reset views

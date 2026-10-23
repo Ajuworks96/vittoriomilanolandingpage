@@ -74,24 +74,38 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-nav-drawer">
+  <!-- Mobile Navigation Backdrop & Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+  <div class="mobile-nav-drawer" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <img src="images/vittorio-milano-logo.png" alt="Vittorio Milano" class="mobile-drawer-logo">
+      </div>
+      <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
     <ul class="mobile-menu-list">
-      <li><a href="#manifesto" class="mobile-menu-link">02 · The House & Manifesto</a></li>
-      <li><a href="#philosophy" class="mobile-menu-link">03 · Our Philosophy</a></li>
-      <li><a href="#benchmarks" class="mobile-menu-link">04 · Sartorial Benchmarks</a></li>
-      <li><a href="#anatomy" class="mobile-menu-link">05 · The Anatomy of Bespoke</a></li>
-      <li><a href="#heritage" class="mobile-menu-link">06 · The Italian Heritage</a></li>
-      <li><a href="#journey" class="mobile-menu-link">07 · The Bespoke Journey</a></li>
-      <li><a href="#collection" class="mobile-menu-link">08 · Signature Commissions</a></li>
-      <li><a href="#mills" class="mobile-menu-link">09 · Curated Mills</a></li>
-      <li><a href="#standards" class="mobile-menu-link">10 · The Vittorio Standards</a></li>
-      <li><a href="#contact" class="mobile-menu-link">11 · Begin Your Journey</a></li>
+      <li><a href="#manifesto" class="mobile-menu-link"><span class="menu-num">02</span> <span class="menu-name">The House &amp; Manifesto</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#philosophy" class="mobile-menu-link"><span class="menu-num">03</span> <span class="menu-name">Our Philosophy</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#benchmarks" class="mobile-menu-link"><span class="menu-num">04</span> <span class="menu-name">Sartorial Benchmarks</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#anatomy" class="mobile-menu-link"><span class="menu-num">05</span> <span class="menu-name">The Anatomy of Bespoke</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#heritage" class="mobile-menu-link"><span class="menu-num">06</span> <span class="menu-name">The Italian Heritage</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#journey" class="mobile-menu-link"><span class="menu-num">07</span> <span class="menu-name">The Bespoke Journey</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#collection" class="mobile-menu-link"><span class="menu-num">08</span> <span class="menu-name">Signature Commissions</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#mills" class="mobile-menu-link"><span class="menu-num">09</span> <span class="menu-name">Curated Mills</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#standards" class="mobile-menu-link"><span class="menu-num">10</span> <span class="menu-name">The Vittorio Standards</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      <li><a href="#contact" class="mobile-menu-link menu-link-cta"><span class="menu-num">11</span> <span class="menu-name">Reserve Consultation</span> <svg class="menu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
     </ul>
+
     <div class="mobile-drawer-footer">
-      <p style="color: var(--color-gold); margin-bottom: 0.5rem; font-weight: 600;">VITTORIO MILANO</p>
-      <p>Sports Club Suite, Al Jaddaf, Dubai</p>
-      <p style="margin-top: 0.5rem;">+971 58 551 4176</p>
+      <p class="drawer-footer-title">VITTORIO MILANO</p>
+      <p class="drawer-footer-sub">Sports Club Suite, Al Jaddaf, Dubai</p>
+      <a href="tel:+971585514176" class="drawer-footer-tel">+971 58 551 4176</a>
     </div>
   </div>
 
