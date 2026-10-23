@@ -1146,6 +1146,36 @@
     justify-content: center;
   }
 
+  /* Luxury Modal Responsive Overrides */
+  .luxury-modal-container {
+    padding: 0.75rem;
+    max-width: 100%;
+  }
+
+  .luxury-modal-dialog {
+    padding: 1.75rem 1.25rem 1.5rem;
+    max-height: 92vh;
+  }
+
+  .luxury-modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal-card-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.85rem;
+    padding-right: 2rem;
+  }
+
+  .modal-form .form-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.85rem;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }

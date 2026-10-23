@@ -2531,6 +2531,189 @@ a.concierge-val:hover {
   color: var(--color-text-ivory-subtle);
 }
 
+/* ==========================================================================
+   20. VITTORIO MILANO — LUXURY CONTACT MODAL POPUP
+   ========================================================================== */
+.luxury-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.luxury-modal.active {
+  display: flex;
+}
+
+.luxury-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 2, 2, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.luxury-modal.active .luxury-modal-backdrop {
+  opacity: 1;
+}
+
+.luxury-modal-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  max-height: 96vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.luxury-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: linear-gradient(165deg, rgba(46, 5, 2, 0.98) 0%, rgba(18, 2, 1, 0.99) 100%);
+  border: 1px solid rgba(201, 164, 92, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem 2.25rem 2.25rem;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(201, 164, 92, 0.28);
+  transform: translateY(20px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) rgba(201, 164, 92, 0.12);
+  box-sizing: border-box;
+}
+
+.luxury-modal.active .luxury-modal-dialog {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.luxury-modal-dialog::-webkit-scrollbar {
+  width: 4px;
+}
+.luxury-modal-dialog::-webkit-scrollbar-track {
+  background: rgba(201, 164, 92, 0.08);
+}
+.luxury-modal-dialog::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}
+
+.luxury-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(201, 164, 92, 0.1);
+  border: 1px solid rgba(201, 164, 92, 0.3);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 10;
+}
+
+.luxury-modal-close:hover {
+  background: rgba(201, 164, 92, 0.28);
+  border-color: var(--color-gold);
+  transform: rotate(90deg);
+  color: #FFFFFF;
+}
+
+.modal-card-header {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(201, 164, 92, 0.18);
+  padding-right: 2.5rem;
+}
+
+.modal-intro-text {
+  font-size: 0.825rem;
+  color: var(--color-text-ivory-subtle);
+  line-height: 1.55;
+  margin-top: 0.5rem;
+}
+
+.modal-form .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+  width: 100%;
+}
+
+.modal-form .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.modal-form .form-submit-wrapper {
+  grid-column: 1 / -1;
+}
+
+/* Modal Success State */
+.modal-success-state {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.modal-success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(201, 164, 92, 0.12);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 24px rgba(201, 164, 92, 0.25);
+}
+
+.modal-success-title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--color-ivory-light);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.modal-success-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-ivory-subtle);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-done-btn {
+  padding: 0.85rem 2.25rem;
+  font-size: 0.725rem;
+  letter-spacing: 0.2em;
+}
+
 /* Floating WhatsApp Button */
 .whatsapp-float {
   position: fixed;
