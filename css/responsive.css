@@ -252,8 +252,8 @@
   }
 }
 
-/* Mobile Devices (Max 767px) */
-@media (max-width: 767px) {
+/* Mobile Devices (Max 768px) */
+@media (max-width: 768px) {
   :root {
     --section-padding: 70px 0;
     --container-padding: 1.25rem;
@@ -329,14 +329,249 @@
   }
 
   .craft-grid,
-  .collection-grid,
-  .fabric-grid,
   .team-grid,
   .why-grid,
-  .benchmarks-grid,
-  .pillars-editorial-grid,
   .executive-process-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* ==========================================================================
+     MOBILE RESPONSIVE HORIZONTAL SLIDERS (ALL 7 CARD SECTIONS)
+     ========================================================================== */
+  .philosophy-triptych,
+  .benchmarks-grid,
+  .editorial-craft-rows,
+  .journey-process-timeline,
+  .collection-grid,
+  .fabric-grid,
+  .pillars-editorial-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 1.15rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold) rgba(201, 164, 92, 0.15);
+  }
+
+  /* Custom WebKit Scrollbars for Luxury Look & Feel */
+  .philosophy-triptych::-webkit-scrollbar,
+  .benchmarks-grid::-webkit-scrollbar,
+  .editorial-craft-rows::-webkit-scrollbar,
+  .journey-process-timeline::-webkit-scrollbar,
+  .collection-grid::-webkit-scrollbar,
+  .fabric-grid::-webkit-scrollbar,
+  .pillars-editorial-grid::-webkit-scrollbar {
+    height: 3px;
+    display: block;
+  }
+
+  .philosophy-triptych::-webkit-scrollbar-track,
+  .benchmarks-grid::-webkit-scrollbar-track,
+  .editorial-craft-rows::-webkit-scrollbar-track,
+  .journey-process-timeline::-webkit-scrollbar-track,
+  .collection-grid::-webkit-scrollbar-track,
+  .fabric-grid::-webkit-scrollbar-track,
+  .pillars-editorial-grid::-webkit-scrollbar-track {
+    background: rgba(201, 164, 92, 0.12);
+    border-radius: 3px;
+  }
+
+  .philosophy-triptych::-webkit-scrollbar-thumb,
+  .benchmarks-grid::-webkit-scrollbar-thumb,
+  .editorial-craft-rows::-webkit-scrollbar-thumb,
+  .journey-process-timeline::-webkit-scrollbar-thumb,
+  .collection-grid::-webkit-scrollbar-thumb,
+  .fabric-grid::-webkit-scrollbar-thumb,
+  .pillars-editorial-grid::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 3px;
+  }
+
+  /* Ensure cards inside horizontal sliders are visible & ready for swiping */
+  .philosophy-pillar-card,
+  .benchmark-card,
+  .craft-editorial-row,
+  .journey-step-card,
+  .product-card,
+  .fabric-card,
+  .pillar-item {
+    opacity: 1 !important;
+    transform: none !important;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  /* 01. Philosophy Pillar Cards */
+  .philosophy-triptych {
+    margin: 2rem 0 2rem;
+  }
+
+  .philosophy-pillar-card {
+    flex: 0 0 82% !important;
+    min-width: 270px;
+    max-width: 320px;
+    padding: 2rem 1.65rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 02. Sartorial Benchmarks Cards */
+  .benchmarks-grid {
+    margin-top: 2rem;
+  }
+
+  .benchmark-card {
+    flex: 0 0 80% !important;
+    min-width: 260px;
+    max-width: 310px;
+    padding: 2rem 1.65rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 03. Editorial Craft Rows (Anatomy of Bespoke) */
+  .editorial-craft-rows {
+    margin-top: 1.5rem;
+  }
+
+  .craft-editorial-row {
+    flex: 0 0 85% !important;
+    min-width: 280px;
+    max-width: 340px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+    padding: 1.65rem 1.4rem;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  .craft-editorial-row .craft-row-img-col {
+    width: 100%;
+    height: 160px;
+    margin-top: 0.5rem;
+  }
+
+  /* 04. Bespoke Journey Timeline */
+  .journey-process-timeline {
+    align-items: stretch;
+  }
+
+  .journey-step-card {
+    flex: 0 0 240px !important;
+    min-width: 240px;
+    padding: 1.75rem 1.35rem;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .journey-step-arrow {
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  /* 05. Collection Product Cards & Filter Tabs */
+  .filter-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 0.65rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    gap: 0.65rem;
+    margin-bottom: 1.75rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.5rem 1.15rem;
+    font-size: 0.65rem;
+  }
+
+  .collection-grid {
+    margin-top: 1.25rem;
+  }
+
+  .product-card {
+    flex: 0 0 82% !important;
+    min-width: 265px;
+    max-width: 320px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-image-wrapper {
+    height: 320px;
+  }
+
+  .product-card .product-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .product-card .product-footer {
+    margin-top: auto;
+  }
+
+  /* 06. Fabric Cards (Curated Mills) */
+  .fabric-grid {
+    margin-top: 2rem;
+  }
+
+  .fabric-card {
+    flex: 0 0 80% !important;
+    min-width: 260px;
+    max-width: 310px;
+    padding: 1.25rem;
+    height: auto;
+  }
+
+  .fabric-thumb {
+    height: 200px;
+  }
+
+  /* 07. Vittorio Standards */
+  .pillars-editorial-grid {
+    margin-top: 2rem;
+  }
+
+  .pillar-item {
+    flex: 0 0 80% !important;
+    min-width: 260px;
+    max-width: 310px;
+    background: rgba(96, 12, 3, 0.28);
+    border: 1px solid var(--color-gold-subtle);
+    border-radius: var(--radius-sm);
+    padding: 1.85rem 1.5rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .process-grid {
