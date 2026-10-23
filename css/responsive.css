@@ -255,8 +255,342 @@
 /* Mobile Devices (Max 768px) */
 @media (max-width: 768px) {
   :root {
-    --section-padding: 70px 0;
+    --section-padding: 60px 0;
     --container-padding: 1.25rem;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  /* ==========================================================================
+     MOBILE TYPOGRAPHY SCALE (CLEAN, MINIMAL, LUXURY PROPORTIONS)
+     ========================================================================== */
+  h1,
+  .hero-title {
+    font-size: 2.15rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.5rem !important;
+  }
+
+  h2,
+  .section-title,
+  .manifesto-house-title,
+  .story-title {
+    font-size: 1.55rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em;
+  }
+
+  h3,
+  .craft-title,
+  .pillar-card-title,
+  .suite-card-title,
+  .pillar-title {
+    font-size: 1.18rem !important;
+    line-height: 1.3 !important;
+  }
+
+  h4,
+  .fabric-name {
+    font-size: 0.98rem !important;
+    line-height: 1.35 !important;
+  }
+
+  p,
+  .paragraph,
+  .story-paragraph {
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+
+  .section-eyebrow {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.22em !important;
+    margin-bottom: 0.65rem !important;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-description {
+    font-size: 0.85rem !important;
+    line-height: 1.6 !important;
+    margin-top: 0.5rem;
+  }
+
+  /* Hero Section Typography */
+  .hero-number-tag {
+    font-size: 0.62rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+  }
+
+  .hero-subtitle {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    max-width: 92%;
+    margin-bottom: 2rem;
+  }
+
+  /* Section 02: Foundational Creed */
+  .manifesto-creed {
+    font-size: 1.1rem !important;
+    line-height: 1.65 !important;
+    padding: 0 0.5rem;
+  }
+
+  /* Section 03: Philosophy Cards & Creed Coda */
+  .pillar-card-num {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.85rem;
+  }
+
+  .pillar-card-tag {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-card-title {
+    font-size: 1.18rem !important;
+    margin-bottom: 0.65rem;
+  }
+
+  .pillar-card-desc {
+    font-size: 0.825rem;
+    line-height: 1.65;
+  }
+
+  .philosophy-closing-statement {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    padding-top: 2rem;
+  }
+
+  /* Section 04: Sartorial Benchmarks */
+  .benchmark-num {
+    font-size: 1.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .benchmark-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.6rem;
+  }
+
+  .benchmark-desc {
+    font-size: 0.825rem;
+    line-height: 1.65;
+  }
+
+  /* Section 05: Anatomy of Bespoke / Craft */
+  .anatomy-lead-narrative {
+    margin: 1.75rem auto 2.25rem;
+  }
+
+  .anatomy-lead-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .anatomy-coda {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .craft-row-num {
+    font-size: 1.85rem;
+  }
+
+  .craft-category {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.35rem;
+  }
+
+  .craft-title {
+    font-size: 1.15rem !important;
+  }
+
+  .craft-row-desc-col .craft-description {
+    font-size: 0.825rem;
+    line-height: 1.6;
+  }
+
+  /* Section 06: Italian Heritage / Story */
+  .story-lead-sentence {
+    font-size: 0.925rem;
+    line-height: 1.65;
+    margin-bottom: 0.85rem;
+  }
+
+  .heritage-coda-box .coda-line-1,
+  .heritage-coda-box .coda-line-2 {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Section 07: Bespoke Journey */
+  .journey-step-num {
+    font-size: 0.825rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .journey-step-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.45rem;
+  }
+
+  .journey-step-desc {
+    font-size: 0.775rem;
+    line-height: 1.55;
+  }
+
+  /* Section 08: Collection Commissions */
+  .product-tag {
+    font-size: 0.55rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .product-subtitle {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.3rem;
+  }
+
+  .product-title {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.4rem;
+  }
+
+  .product-specs {
+    font-size: 0.775rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .product-link {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+  }
+
+  /* Section 09: Curated Mills */
+  .fabric-mill {
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+  }
+
+  .fabric-name {
+    font-size: 0.98rem !important;
+    margin: 0.2rem 0 0.4rem;
+  }
+
+  .fabric-meta {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  /* Section 10: Standards */
+  .pillar-num {
+    font-size: 2.0rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-tag {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.35rem;
+  }
+
+  .pillar-title {
+    font-size: 1.18rem !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.825rem;
+    line-height: 1.6;
+  }
+
+  /* Section 11: Contact Concierge & Booking Form */
+  .suite-card-tag {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+  }
+
+  .suite-card-title {
+    font-size: 1.25rem !important;
+    line-height: 1.3;
+  }
+
+  .contact-lead-prompt {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-lead-item {
+    font-size: 0.825rem;
+    line-height: 1.5;
+  }
+
+  .concierge-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+  }
+
+  .concierge-val {
+    font-size: 0.85rem;
+  }
+
+  .concierge-sub {
+    font-size: 0.72rem;
+  }
+
+  .luxury-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+  }
+
+  .luxury-input,
+  .luxury-select,
+  .luxury-textarea {
+    font-size: 0.825rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .form-footnote {
+    font-size: 0.68rem;
+  }
+
+  /* Footer */
+  .footer-brand p,
+  .footer-tagline {
+    font-size: 0.825rem;
+    line-height: 1.6;
+  }
+
+  .footer-col-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
+
+  .footer-links a,
+  .footer-contact-item {
+    font-size: 0.75rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
   }
 
   .site-header {
@@ -268,7 +602,7 @@
   }
 
   .hero-content-wrapper {
-    padding: 7rem 1rem 3rem;
+    padding: 6.5rem 1rem 2.5rem;
   }
 
   .hero-actions {
@@ -645,12 +979,35 @@
 
 /* Small Mobile Devices (Max 390px) */
 @media (max-width: 390px) {
-  h1 { font-size: 2.25rem; }
-  h2 { font-size: 1.85rem; }
-  
+  h1,
+  .hero-title {
+    font-size: 1.95rem !important;
+  }
+
+  h2,
+  .section-title,
+  .manifesto-house-title,
+  .story-title {
+    font-size: 1.42rem !important;
+  }
+
+  h3,
+  .craft-title,
+  .pillar-card-title,
+  .suite-card-title,
+  .pillar-title {
+    font-size: 1.12rem !important;
+  }
+
+  p,
+  .paragraph,
+  .manifesto-creed {
+    font-size: 0.825rem !important;
+  }
+
   .btn {
-    padding: 0.95rem 1.5rem;
-    font-size: 0.7rem;
+    padding: 0.85rem 1.4rem;
+    font-size: 0.68rem;
   }
 
   .process-grid {
