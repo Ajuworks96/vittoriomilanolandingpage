@@ -313,13 +313,13 @@ em,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
-  padding: 0.85rem 1.85rem;
+  gap: 0.55rem;
+  padding: 0.65rem 1.45rem;
   font-family: var(--font-sans);
-  font-size: 0.725rem;
+  font-size: 0.68rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: var(--transition-smooth);
@@ -330,9 +330,9 @@ em,
 }
 
 .btn-sm {
-  padding: 0.55rem 1.25rem !important;
-  font-size: 0.65rem !important;
-  letter-spacing: 0.22em !important;
+  padding: 0.45rem 1rem !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.18em !important;
 }
 
 .btn-gold {
@@ -532,16 +532,16 @@ body.admin-bar .site-header,
 }
 
 .header-actions .btn {
-  padding: 0.6rem 1.4rem;
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
+  padding: 0.5rem 1.15rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
   border-color: rgba(201, 164, 92, 0.5);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .site-header.scrolled .header-actions .btn {
-  padding: 0.5rem 1.25rem;
+  padding: 0.42rem 1rem;
 }
 
 .phone-link {
@@ -1697,10 +1697,10 @@ body.admin-bar .site-header,
 }
 
 .btn-journey {
-  padding: 1.25rem 3rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.22em;
-  box-shadow: 0 10px 30px rgba(96, 12, 3, 0.12);
+  padding: 0.85rem 2.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  box-shadow: 0 8px 25px rgba(96, 12, 3, 0.12);
 }
 
 .btn-journey:hover {
@@ -2622,15 +2622,15 @@ a.concierge-val:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   background: linear-gradient(135deg, #C9A45C 0%, #A5813A 100%);
   color: #120200;
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  padding: 1.15rem 2rem;
+  letter-spacing: 0.18em;
+  padding: 0.8rem 1.65rem;
   border: 1px solid var(--color-gold);
   border-radius: var(--radius-sm);
   cursor: pointer;
@@ -2933,9 +2933,9 @@ a.concierge-val:hover {
 }
 
 .modal-done-btn {
-  padding: 0.85rem 2.25rem;
-  font-size: 0.725rem;
-  letter-spacing: 0.2em;
+  padding: 0.65rem 1.65rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
 }
 
 /* Floating WhatsApp Button */

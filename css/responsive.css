@@ -50,8 +50,9 @@
   }
 
   .header-actions .btn {
-    padding: 0.55rem 1.15rem;
-    font-size: 0.62rem;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
   }
 
   .process-grid {
@@ -686,9 +687,9 @@
 
   .hero-actions .btn {
     width: 100%;
-    padding: 0.9rem 1.15rem !important;
-    font-size: 0.68rem !important;
-    letter-spacing: 0.16em !important;
+    padding: 0.72rem 1.15rem !important;
+    font-size: 0.64rem !important;
+    letter-spacing: 0.15em !important;
     white-space: normal !important;
     text-align: center;
     box-sizing: border-box;
@@ -1040,8 +1041,9 @@
 
   .btn-journey {
     width: 100%;
-    padding: 1.15rem 1.5rem;
-    font-size: 0.75rem;
+    padding: 0.75rem 1.35rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
   }
 
   /* Section 11: Private Consultation Suite Mobile Perfect Alignment */
@@ -1229,9 +1231,9 @@
 
   .btn-luxury-submit {
     width: 100% !important;
-    padding: 0.95rem 1.5rem !important;
-    font-size: 0.72rem !important;
-    letter-spacing: 0.18em !important;
+    padding: 0.72rem 1.35rem !important;
+    font-size: 0.65rem !important;
+    letter-spacing: 0.16em !important;
   }
 
   .form-notice {
@@ -1344,8 +1346,9 @@
   }
 
   .btn {
-    padding: 0.85rem 1.4rem;
-    font-size: 0.68rem;
+    padding: 0.6rem 1.15rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
   }
 
   .credential-val-num {
