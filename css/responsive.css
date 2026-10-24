@@ -83,17 +83,18 @@
   }
 
   .hero-bg-image {
-    object-position: center 18%;
+    object-position: center 25%;
   }
 
   .hero-bg-overlay {
     background:
-      linear-gradient(180deg, rgba(18, 3, 4, 0.94) 0%, rgba(18, 3, 4, 0.78) 45%, rgba(18, 3, 4, 0.92) 100%),
-      radial-gradient(circle at 50% 30%, rgba(96, 12, 3, 0.35) 0%, transparent 70%);
+      linear-gradient(180deg, rgba(14, 3, 4, 0.88) 0%, rgba(14, 3, 4, 0.45) 18%, rgba(14, 3, 4, 0.32) 38%, rgba(14, 3, 4, 0.50) 62%, rgba(14, 3, 4, 0.88) 88%, #120304 100%);
   }
 
   .hero-title {
-    font-size: 3.25rem;
+    font-size: 3.1rem;
+    font-style: normal !important;
+    text-transform: uppercase !important;
   }
 
   .main-nav,
@@ -268,10 +269,20 @@
      ========================================================================== */
   h1,
   .hero-title {
-    font-size: 2.15rem !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.015em;
-    margin-bottom: 1.5rem !important;
+    font-family: var(--font-serif) !important;
+    font-size: 1.85rem !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    text-transform: uppercase !important;
+    line-height: 1.22 !important;
+    letter-spacing: 0.05em !important;
+    color: #DFBF7A !important;
+    background: linear-gradient(180deg, #FFF0D0 0%, #DFBF7A 45%, #C29B4D 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin-bottom: 1.75rem !important;
+    text-align: center !important;
+    filter: drop-shadow(0 3px 14px rgba(0, 0, 0, 0.85)) !important;
   }
 
   h2,
@@ -351,18 +362,17 @@
     height: 100%;
   }
 
-  .hero-bg-wrapper picture,
-  .hero-bg-wrapper .hero-bg-image {
+  .hero-bg-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
-    filter: brightness(0.76) contrast(1.05) saturate(1.1);
+    object-position: center 25%;
+    filter: brightness(0.80) contrast(1.05) saturate(1.1);
   }
 
   .hero-bg-overlay {
     background:
-      linear-gradient(180deg, rgba(14, 3, 4, 0.88) 0%, rgba(14, 3, 4, 0.48) 18%, rgba(14, 3, 4, 0.28) 35%, rgba(14, 3, 4, 0.48) 65%, rgba(14, 3, 4, 0.86) 88%, #120304 100%) !important;
+      linear-gradient(180deg, rgba(14, 3, 4, 0.88) 0%, rgba(14, 3, 4, 0.48) 18%, rgba(14, 3, 4, 0.30) 38%, rgba(14, 3, 4, 0.50) 62%, rgba(14, 3, 4, 0.88) 88%, #120304 100%) !important;
   }
 
   /* Section 02: Foundational Creed */
