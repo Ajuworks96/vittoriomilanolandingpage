@@ -70,7 +70,9 @@
 /* --------------------------------------------------------------------------
    02. BASE RESETS & TYPOGRAPHY
    -------------------------------------------------------------------------- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -96,9 +98,11 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--color-burgundy-dark);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--color-gold);
   border-radius: 4px;
@@ -116,19 +120,39 @@ a {
   transition: var(--transition-fast);
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: inherit;
   outline: none;
 }
 
 /* Typography Scale — All Headings Italic Weight 300 */
-h1, h2, h3, h4, h5, h6,
-.hero-title, .section-title, .philosophy-headline,
-.story-title, .craft-title, .step-card-title,
-.product-title, .tier-name, .why-title,
-.pillar-title, .contact-title, .signature-name,
-.stat-number, .tier-roman-num, .craft-row-num, .pillar-num, .step-card-num {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.section-title,
+.philosophy-headline,
+.story-title,
+.craft-title,
+.step-card-title,
+.product-title,
+.tier-name,
+.why-title,
+.pillar-title,
+.contact-title,
+.signature-name,
+.stat-number,
+.tier-roman-num,
+.craft-row-num,
+.pillar-num,
+.step-card-num {
   font-family: var(--font-serif);
   font-weight: 300 !important;
   font-style: italic !important;
@@ -137,7 +161,10 @@ h1, h2, h3, h4, h5, h6,
   color: inherit;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
 h2,
 .section-title,
 .manifesto-house-title,
@@ -146,16 +173,24 @@ h2,
   font-size: 1.85rem !important;
   line-height: 1.25;
 }
+
 h2 em,
 .section-title em,
 .manifesto-house-title em,
 .story-title em {
   font-family: 'Cormorant Garamond', Georgia, serif !important;
 }
-h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
-h4 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); }
 
-em, .italic-accent {
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+}
+
+em,
+.italic-accent {
   font-style: italic;
   font-family: var(--font-serif);
   font-weight: 300 !important;
@@ -168,7 +203,9 @@ em, .italic-accent {
 /* --------------------------------------------------------------------------
    03. REUSABLE ELEMENTOR-FRIENDLY UTILITIES
    -------------------------------------------------------------------------- */
-.container, .vm-container, .vittorio-site-wrapper .container {
+.container,
+.vm-container,
+.vittorio-site-wrapper .container {
   width: 100%;
   max-width: var(--container-max);
   margin-left: auto;
@@ -178,7 +215,9 @@ em, .italic-accent {
   box-sizing: border-box;
 }
 
-.section, .vm-section, .vittorio-site-wrapper .section {
+.section,
+.vm-section,
+.vittorio-site-wrapper .section {
   padding: var(--section-padding);
   position: relative;
   box-sizing: border-box;
@@ -366,6 +405,7 @@ body.admin-bar .site-header,
 }
 
 @media (max-width: 782px) {
+
   body.admin-bar .site-header,
   .admin-bar .site-header {
     top: 46px;
@@ -524,6 +564,7 @@ body.admin-bar .site-header,
   .phone-link span {
     display: none !important;
   }
+
   .phone-link {
     width: 36px;
     height: 36px;
@@ -534,6 +575,7 @@ body.admin-bar .site-header,
     justify-content: center;
     padding: 0;
   }
+
   .phone-link:hover {
     background: rgba(201, 164, 92, 0.15);
     border-color: var(--color-gold);
@@ -562,9 +604,18 @@ body.admin-bar .site-header,
   transition: var(--transition-fast);
 }
 
-.hamburger-line:nth-child(1) { top: 3px; }
-.hamburger-line:nth-child(2) { top: 11px; width: 75%; }
-.hamburger-line:nth-child(3) { top: 19px; }
+.hamburger-line:nth-child(1) {
+  top: 3px;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 11px;
+  width: 75%;
+}
+
+.hamburger-line:nth-child(3) {
+  top: 19px;
+}
 
 .mobile-nav-toggle.active .hamburger-line:nth-child(1) {
   top: 11px;
@@ -678,6 +729,7 @@ body.admin-bar .site-header,
 .mobile-menu-list::-webkit-scrollbar {
   width: 3px;
 }
+
 .mobile-menu-list::-webkit-scrollbar-thumb {
   background: rgba(201, 164, 92, 0.3);
   border-radius: 3px;
@@ -1015,10 +1067,25 @@ body.admin-bar .site-header,
 }
 
 @keyframes scrollPulse {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  51% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1594,7 +1661,7 @@ body.admin-bar .site-header,
   display: block;
 }
 
-.journey-step-card:hover + .journey-step-arrow {
+.journey-step-card:hover+.journey-step-arrow {
   color: var(--color-burgundy);
   transform: translateX(2px);
 }
@@ -1604,12 +1671,15 @@ body.admin-bar .site-header,
     padding: 1.5rem 0.85rem 1.75rem;
     min-height: 210px;
   }
+
   .journey-step-title {
     font-size: 1.15rem;
   }
+
   .journey-step-desc {
     font-size: 0.775rem;
   }
+
   .journey-step-arrow {
     width: 24px;
     height: 24px;
@@ -1923,6 +1993,7 @@ body.admin-bar .site-header,
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   100% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -1932,10 +2003,12 @@ body.admin-bar .site-header,
   .mills-marquee-strip {
     padding: 1.1rem 0;
   }
+
   .mill-logo-item {
     font-size: 0.85rem;
     letter-spacing: 0.18em;
   }
+
   .mill-dot {
     margin: 0 1.35rem;
     font-size: 0.95rem;
@@ -2261,7 +2334,7 @@ body.admin-bar .site-header,
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 85% 15%, rgba(201, 164, 92, 0.07) 0%, transparent 45%),
     radial-gradient(circle at 15% 85%, rgba(96, 12, 3, 0.3) 0%, transparent 55%);
   pointer-events: none;
@@ -2637,6 +2710,7 @@ a.concierge-val:hover {
   color: var(--color-text-ivory-subtle);
   line-height: 1.6;
   max-width: 320px;
+  text-align: center;
 }
 
 .footer-title {
@@ -2752,9 +2826,11 @@ a.concierge-val:hover {
 .luxury-modal-dialog::-webkit-scrollbar {
   width: 4px;
 }
+
 .luxury-modal-dialog::-webkit-scrollbar-track {
   background: rgba(201, 164, 92, 0.08);
 }
+
 .luxury-modal-dialog::-webkit-scrollbar-thumb {
   background: var(--color-gold);
   border-radius: 4px;
