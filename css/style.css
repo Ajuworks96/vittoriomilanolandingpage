@@ -2687,6 +2687,8 @@ a.concierge-val:hover {
 .footer-brand {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  max-width: 320px;
   gap: 1.25rem;
 }
 
@@ -2710,6 +2712,7 @@ a.concierge-val:hover {
   color: var(--color-text-ivory-subtle);
   line-height: 1.6;
   max-width: 320px;
+  width: 100%;
   text-align: center;
 }
 

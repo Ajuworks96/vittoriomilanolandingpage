@@ -621,6 +621,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    max-width: 320px;
     margin: 0 auto;
   }
 
@@ -1262,6 +1263,7 @@
   .footer-brand {
     align-items: center !important;
     text-align: center !important;
+    max-width: 320px !important;
     margin: 0 auto;
   }
 
