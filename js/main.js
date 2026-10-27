@@ -5,7 +5,7 @@
  */
 
 // Google Sheet Webhook Configuration (Bound to Sheet: 104sYL4M5wIJbJ6PiZlLUDfFAXXODoPFfmQAnX6gDP4c)
-const GOOGLE_SHEET_WEBAPP_URL = window.VM_GOOGLE_SHEET_URL || "";
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwiu5CoRt1imVXJCPcZual5hBdTCdfGRwdY3zsduWgYZiw2rrE59vvkBU2GqB3Yjg3q/exec";
 const ENQUIRY_EMAIL_ENDPOINT = "https://formsubmit.co/ajax/vm.enquires@gmail.com";
 
 /**
