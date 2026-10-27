@@ -91,10 +91,10 @@ function initMobileNav() {
  * 03. Booking Form Handler
  */
 function initBookingForm() {
-  const form = document.querySelector('.luxury-form');
+  const form = document.querySelector('.luxury-form.editorial-form') || document.querySelector('.editorial-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const submitBtn = form.querySelector('button[type="submit"]');
@@ -103,22 +103,51 @@ function initBookingForm() {
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<span>CONFIRMING FITTING...</span>';
 
+    const serviceSelect = form.querySelector('#service');
+    const locationSelect = form.querySelector('#location');
+    const timeSelect = form.querySelector('#time');
+
+    const payload = {
+      "Full Name": form.querySelector('#full-name')?.value || '',
+      "Phone Number": form.querySelector('#phone')?.value || '',
+      "Email Address": form.querySelector('#email')?.value || '',
+      "Commission of Interest": serviceSelect ? (serviceSelect.options[serviceSelect.selectedIndex]?.text || serviceSelect.value) : '',
+      "Preferred Venue": locationSelect ? (locationSelect.options[locationSelect.selectedIndex]?.text || locationSelect.value) : '',
+      "Preferred Date": form.querySelector('#date')?.value || 'Not specified',
+      "Preferred Time": timeSelect ? (timeSelect.options[timeSelect.selectedIndex]?.text || timeSelect.value) : '',
+      "Sartorial Vision / Notes": form.querySelector('#notes')?.value || 'None provided',
+      "_subject": `New Vittorio Milano Consultation: ${form.querySelector('#full-name')?.value || 'VIP Client'}`,
+      "_template": "table",
+      "_captcha": "false"
+    };
+
+    try {
+      await fetch("https://formsubmit.co/ajax/vm.enquires@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.warn("FormSubmit transmission note:", err);
+    }
+
+    submitBtn.style.backgroundColor = '#25D366';
+    submitBtn.style.borderColor = '#25D366';
+    submitBtn.style.color = '#FFFFFF';
+    submitBtn.innerHTML = '<span>FITTING REQUESTED ✓</span>';
+
+    form.reset();
+
     setTimeout(() => {
-      submitBtn.style.backgroundColor = '#25D366';
-      submitBtn.style.borderColor = '#25D366';
-      submitBtn.style.color = '#FFFFFF';
-      submitBtn.innerHTML = '<span>FITTING REQUESTED ✓</span>';
-
-      form.reset();
-
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.style.backgroundColor = '';
-        submitBtn.style.borderColor = '';
-        submitBtn.style.color = '';
-        submitBtn.innerHTML = originalText;
-      }, 4000);
-    }, 1200);
+      submitBtn.disabled = false;
+      submitBtn.style.backgroundColor = '';
+      submitBtn.style.borderColor = '';
+      submitBtn.style.color = '';
+      submitBtn.innerHTML = originalText;
+    }, 4500);
   });
 }
 
@@ -252,7 +281,7 @@ function initContactModal() {
 
   // Handle popup form submission
   if (popupForm) {
-    popupForm.addEventListener('submit', (e) => {
+    popupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = popupForm.querySelector('button[type="submit"]');
       const originalHtml = submitBtn.innerHTML;
@@ -260,12 +289,39 @@ function initContactModal() {
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span>CONFIRMING FITTING...</span>';
 
-      setTimeout(() => {
-        popupForm.style.display = 'none';
-        if (successView) successView.style.display = 'block';
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalHtml;
-      }, 1000);
+      const serviceSelect = popupForm.querySelector('#modal-service');
+      const locationSelect = popupForm.querySelector('#modal-location');
+
+      const payload = {
+        "Full Name": popupForm.querySelector('#modal-full-name')?.value || '',
+        "Phone Number": popupForm.querySelector('#modal-phone')?.value || '',
+        "Email Address": popupForm.querySelector('#modal-email')?.value || '',
+        "Commission of Interest": serviceSelect ? (serviceSelect.options[serviceSelect.selectedIndex]?.text || serviceSelect.value) : '',
+        "Preferred Venue": locationSelect ? (locationSelect.options[locationSelect.selectedIndex]?.text || locationSelect.value) : '',
+        "Preferred Date": popupForm.querySelector('#modal-date')?.value || 'Not specified',
+        "Sartorial Preferences / Notes": popupForm.querySelector('#modal-notes')?.value || 'None provided',
+        "_subject": `New Vittorio Milano Fitting Request (Modal): ${popupForm.querySelector('#modal-full-name')?.value || 'VIP Client'}`,
+        "_template": "table",
+        "_captcha": "false"
+      };
+
+      try {
+        await fetch("https://formsubmit.co/ajax/vm.enquires@gmail.com", {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn("Modal FormSubmit transmission note:", err);
+      }
+
+      popupForm.style.display = 'none';
+      if (successView) successView.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalHtml;
     });
   }
 }

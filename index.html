@@ -1135,27 +1135,30 @@
             <h3 class="suite-card-title">Reserve Your Private Fitting</h3>
           </div>
 
-          <form class="luxury-form editorial-form">
+          <form class="luxury-form editorial-form" action="https://formsubmit.co/vm.enquires@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="New Vittorio Milano Consultation Request">
             <div class="form-grid">
               <div class="form-group full-width">
                 <label class="form-label" for="full-name">Full Name *</label>
-                <input type="text" id="full-name" class="form-input" placeholder="e.g. Lord Alexander Vance" required>
+                <input type="text" id="full-name" name="Full Name" class="form-input" placeholder="e.g. Lord Alexander Vance" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="phone">Phone / WhatsApp Number *</label>
-                <input type="tel" id="phone" class="form-input" placeholder="+971 58 000 0000" required>
+                <input type="tel" id="phone" name="Phone Number" class="form-input" placeholder="+971 58 000 0000" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="email">Email Address *</label>
-                <input type="email" id="email" class="form-input" placeholder="alexander@vance.com" required>
+                <input type="email" id="email" name="Email Address" class="form-input" placeholder="alexander@vance.com" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="service">Commission of Interest</label>
                 <div class="select-wrapper">
-                  <select id="service" class="form-select">
+                  <select id="service" name="Commission of Interest" class="form-select">
                     <option value="boardroom">A suit for the boardroom (The Executive)</option>
                     <option value="evening">A tuxedo for an evening (The Evening)</option>
                     <option value="ceremonial">Wedding / Ceremony (The Ceremonial)</option>
@@ -1169,7 +1172,7 @@
               <div class="form-group">
                 <label class="form-label" for="location">Preferred Consultation Venue</label>
                 <div class="select-wrapper">
-                  <select id="location" class="form-select">
+                  <select id="location" name="Preferred Venue" class="form-select">
                     <option value="atelier">At the Atelier — Al Jaddaf, Dubai</option>
                     <option value="residence">Private Residence Visit (UAE & Europe)</option>
                     <option value="hotel">Hotel Suite Appointment</option>
@@ -1179,13 +1182,13 @@
 
               <div class="form-group">
                 <label class="form-label" for="date">Preferred Date</label>
-                <input type="date" id="date" class="form-input">
+                <input type="date" id="date" name="Preferred Date" class="form-input">
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="time">Preferred Time</label>
                 <div class="select-wrapper">
-                  <select id="time" class="form-select">
+                  <select id="time" name="Preferred Time" class="form-select">
                     <option value="morning">Morning (10:00 — 13:00)</option>
                     <option value="afternoon">Afternoon (13:00 — 17:00)</option>
                     <option value="evening">Evening (17:00 — 21:00)</option>
@@ -1195,7 +1198,7 @@
 
               <div class="form-group full-width">
                 <label class="form-label" for="notes">Garment Vision / Occasion Notes</label>
-                <textarea id="notes" class="form-textarea"
+                <textarea id="notes" name="Sartorial Vision / Notes" class="form-textarea"
                   placeholder="Tell us what you are looking for (boardroom, evening, wedding, bespoke details)..."></textarea>
               </div>
 
@@ -1314,28 +1317,31 @@
 
         <!-- Modal Form Body -->
         <div class="modal-card-body">
-          <form class="luxury-form modal-form" id="popup-consultation-form">
+          <form class="luxury-form modal-form" id="popup-consultation-form" action="https://formsubmit.co/vm.enquires@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="New Vittorio Milano Fitting Request (Modal)">
             <div class="form-grid">
               <div class="form-group full-width">
                 <label class="form-label" for="modal-full-name">Full Name *</label>
-                <input type="text" id="modal-full-name" class="form-input" placeholder="e.g. Lord Alexander Vance"
+                <input type="text" id="modal-full-name" name="Full Name" class="form-input" placeholder="e.g. Lord Alexander Vance"
                   required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="modal-phone">Phone / WhatsApp Number *</label>
-                <input type="tel" id="modal-phone" class="form-input" placeholder="+971 58 000 0000" required>
+                <input type="tel" id="modal-phone" name="Phone Number" class="form-input" placeholder="+971 58 000 0000" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="modal-email">Email Address *</label>
-                <input type="email" id="modal-email" class="form-input" placeholder="alexander@vance.com" required>
+                <input type="email" id="modal-email" name="Email Address" class="form-input" placeholder="alexander@vance.com" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="modal-service">Commission of Interest</label>
                 <div class="select-wrapper">
-                  <select id="modal-service" class="form-select">
+                  <select id="modal-service" name="Commission of Interest" class="form-select">
                     <option value="boardroom">A suit for the boardroom (The Executive)</option>
                     <option value="evening">A tuxedo for an evening (The Evening)</option>
                     <option value="ceremonial">Wedding / Ceremony (The Ceremonial)</option>
@@ -1349,7 +1355,7 @@
               <div class="form-group">
                 <label class="form-label" for="modal-location">Preferred Consultation Venue</label>
                 <div class="select-wrapper">
-                  <select id="modal-location" class="form-select">
+                  <select id="modal-location" name="Preferred Venue" class="form-select">
                     <option value="atelier">At the Atelier — Al Jaddaf, Dubai</option>
                     <option value="residence">Private Residence Visit (UAE & Europe)</option>
                     <option value="hotel">Hotel Suite Appointment</option>
@@ -1359,12 +1365,12 @@
 
               <div class="form-group full-width">
                 <label class="form-label" for="modal-date">Preferred Date</label>
-                <input type="date" id="modal-date" class="form-input">
+                <input type="date" id="modal-date" name="Preferred Date" class="form-input">
               </div>
 
               <div class="form-group full-width">
                 <label class="form-label" for="modal-notes">Sartorial Preferences / Notes</label>
-                <textarea id="modal-notes" class="form-textarea"
+                <textarea id="modal-notes" name="Sartorial Preferences / Notes" class="form-textarea"
                   placeholder="Fabric preferences, specific occasion details, or tailored requests..."></textarea>
               </div>
 
