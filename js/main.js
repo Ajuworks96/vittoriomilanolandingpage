@@ -1,7 +1,35 @@
 /**
  * VITTORIO MILANO — MAIN JS
  * Header scroll states, Mobile Navigation Drawer, Form interactions
+ * Dual Integration: vm.enquires@gmail.com + Google Sheet (VM Leads)
  */
+
+// Google Sheet Webhook Configuration (Bound to Sheet: 104sYL4M5wIJbJ6PiZlLUDfFAXXODoPFfmQAnX6gDP4c)
+const GOOGLE_SHEET_WEBAPP_URL = window.VM_GOOGLE_SHEET_URL || "";
+const ENQUIRY_EMAIL_ENDPOINT = "https://formsubmit.co/ajax/vm.enquires@gmail.com";
+
+/**
+ * Dispatches lead data to the deployed Google Apps Script Web App
+ */
+async function recordLeadToGoogleSheet(leadData) {
+  if (!GOOGLE_SHEET_WEBAPP_URL || GOOGLE_SHEET_WEBAPP_URL.includes("PASTE_YOUR_APPS_SCRIPT_URL_HERE")) {
+    console.info("Google Sheet Webhook URL awaiting deployment. Leads dispatched via FormSubmit.");
+    return;
+  }
+  try {
+    await fetch(GOOGLE_SHEET_WEBAPP_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify(leadData)
+    });
+    console.log("Lead successfully transmitted to Google Sheet.");
+  } catch (err) {
+    console.warn("Google Sheet sync dispatch note:", err);
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
@@ -107,7 +135,7 @@ function initBookingForm() {
     const locationSelect = form.querySelector('#location');
     const timeSelect = form.querySelector('#time');
 
-    const payload = {
+    const sheetPayload = {
       "Full Name": form.querySelector('#full-name')?.value || '',
       "Phone Number": form.querySelector('#phone')?.value || '',
       "Email Address": form.querySelector('#email')?.value || '',
@@ -116,13 +144,21 @@ function initBookingForm() {
       "Preferred Date": form.querySelector('#date')?.value || 'Not specified',
       "Preferred Time": timeSelect ? (timeSelect.options[timeSelect.selectedIndex]?.text || timeSelect.value) : '',
       "Sartorial Vision / Notes": form.querySelector('#notes')?.value || 'None provided',
-      "_subject": `New Vittorio Milano Consultation: ${form.querySelector('#full-name')?.value || 'VIP Client'}`,
+      "Source": "Website Suite Form (Section)"
+    };
+
+    const payload = {
+      ...sheetPayload,
+      "_subject": `New Vittorio Milano Consultation: ${sheetPayload["Full Name"] || 'VIP Client'}`,
       "_template": "table",
       "_captcha": "false"
     };
 
+    // Parallel execution: Google Sheet sync + FormSubmit email delivery
+    recordLeadToGoogleSheet(sheetPayload);
+
     try {
-      await fetch("https://formsubmit.co/ajax/vm.enquires@gmail.com", {
+      await fetch(ENQUIRY_EMAIL_ENDPOINT, {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -292,21 +328,30 @@ function initContactModal() {
       const serviceSelect = popupForm.querySelector('#modal-service');
       const locationSelect = popupForm.querySelector('#modal-location');
 
-      const payload = {
+      const sheetPayload = {
         "Full Name": popupForm.querySelector('#modal-full-name')?.value || '',
         "Phone Number": popupForm.querySelector('#modal-phone')?.value || '',
         "Email Address": popupForm.querySelector('#modal-email')?.value || '',
         "Commission of Interest": serviceSelect ? (serviceSelect.options[serviceSelect.selectedIndex]?.text || serviceSelect.value) : '',
         "Preferred Venue": locationSelect ? (locationSelect.options[locationSelect.selectedIndex]?.text || locationSelect.value) : '',
         "Preferred Date": popupForm.querySelector('#modal-date')?.value || 'Not specified',
-        "Sartorial Preferences / Notes": popupForm.querySelector('#modal-notes')?.value || 'None provided',
-        "_subject": `New Vittorio Milano Fitting Request (Modal): ${popupForm.querySelector('#modal-full-name')?.value || 'VIP Client'}`,
+        "Preferred Time": "-",
+        "Sartorial Vision / Notes": popupForm.querySelector('#modal-notes')?.value || 'None provided',
+        "Source": "Modal Consultation Popup"
+      };
+
+      const payload = {
+        ...sheetPayload,
+        "_subject": `New Vittorio Milano Fitting Request (Modal): ${sheetPayload["Full Name"] || 'VIP Client'}`,
         "_template": "table",
         "_captcha": "false"
       };
 
+      // Parallel execution: Google Sheet sync + FormSubmit email delivery
+      recordLeadToGoogleSheet(sheetPayload);
+
       try {
-        await fetch("https://formsubmit.co/ajax/vm.enquires@gmail.com", {
+        await fetch(ENQUIRY_EMAIL_ENDPOINT, {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
